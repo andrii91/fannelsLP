@@ -443,11 +443,15 @@
 
   .funnels_control-img {
     padding-left: 0;
-
+    position: static;
+    transform: none;
+margin-top: 90px;
     img {
       width: 580px;
       max-width: inherit;
-      margin-left: -130px;
+      margin-left: -85px;
+      position: relative;
+      z-index: 0;
     }
   }
 
@@ -474,4 +478,12 @@
     }
 
   }
+  
+  main {
+    overflow: visible;
+  }
+  .funnels_testimonials {
+  overflow: hidden
+}
+
 }

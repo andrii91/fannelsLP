@@ -82,6 +82,9 @@
   max-width: 354px;
   margin-left: auto;
   margin-right: auto;
+  display: block !important;
+  position: relative;
+  top: 0;
 
   &:nth-child(1) {
     margin-bottom: 297px;
@@ -187,3 +190,4 @@
   margin-bottom: 50px;
   margin-right: auto;
 }
+

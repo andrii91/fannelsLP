@@ -201,18 +201,16 @@ $(document).ready(function () {
 
   /*new*/
 
-  $('.funnels_control-item').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeInLeft', // Class to add to the elements when they are visible
-    classToRemove: 'hidden_animation',
-    repeat: false,
-    offset: '50%',
-    invertBottomOffset: true,
-    callbackFunction: function (elem, action) {
-      /*if($('.full-visible').length > 1) {
-        $($('.full-visible')[0]).removeClass('visible animated fadeInUp full-visible').addClass('hidden_animation')
-      }*/
-    },
-  });
+  /*  $('.funnels_control-item').addClass("hidden_animation").viewportChecker({
+      classToAdd: 'visible animated fadeInLeft', // Class to add to the elements when they are visible
+      classToRemove: 'hidden_animation',
+      repeat: false,
+      offset: '50%',
+      invertBottomOffset: true,
+      callbackFunction: function (elem, action) {
+
+      },
+    });*/
 
   $('.funnels_testimonials-slider').slick({
     infinite: true,
@@ -245,6 +243,117 @@ $(document).ready(function () {
     }
   ]
   });
+
+
+
+  var scrollAnim;
+
+  if ($(window).width() < 1200) {
+    $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+    $('#animateText1').show();
+    scrollAnim = -1;
+  } else {
+    $(window).scroll(function (e) {
+
+      var s = $(window).scrollTop(),
+        topSection = $('.funnels_control').offset().top;
+
+      scrollAnim = s - topSection;
+
+      console.log(scrollAnim);
+
+
+
+      if (scrollAnim > 0 && scrollAnim < 230 && $(window).width() > 1200) {
+        $('.funnels_control-item').hide();
+        $('.funnels_control-item').removeClass('visible animated fadeInLeft').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+        $('#animateText1').show();
+      }
+      if (scrollAnim > 230 && scrollAnim < 610 && $(window).width() > 1200) {
+        $('.funnels_control-item').hide();
+        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+        $('#animateText2').show();
+      }
+      if (scrollAnim > 610 && scrollAnim < 1190 && $(window).width() > 1200) {
+        $('.funnels_control-item').hide();
+        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+        $('#animateText3').show();
+      }
+      if (scrollAnim > 1190 && scrollAnim < 1400 && $(window).width() > 1200) {
+        $('.funnels_control-item').hide();
+        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+        $('#animateText4').show();
+      }
+      if (scrollAnim > 1400 && $(window).width() > 1200) {
+        $('.funnels_control-item').hide();
+        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+        $('#animateText5').show();
+      }
+    })
+
+  }
+
+  $(window).resize(function () {
+
+    if ($(window).width() < 1200) {
+      $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+      $('#animateText1').show();
+
+      scrollAnim = -1;
+    } else {
+      $('.funnels_control-item').hide();
+      $('.funnels_control-item').removeClass('visible animated fadeInLeft').addClass('hidden_animation')
+      $(window).scroll(function (e) {
+
+        var s = $(window).scrollTop(),
+          topSection = $('.funnels_control').offset().top;
+
+        scrollAnim = s - topSection;
+
+        console.log(scrollAnim);
+
+
+
+        if (scrollAnim > 0 && scrollAnim < 230 && $(window).width() > 1200) {
+          $('.funnels_control-item').hide();
+          $('.funnels_control-item').removeClass('visible animated fadeInLeft').addClass('hidden_animation')
+          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+          $('#animateText1').show();
+        }
+        if (scrollAnim > 230 && scrollAnim < 610 && $(window).width() > 1200) {
+          $('.funnels_control-item').hide();
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+          $('#animateText2').show();
+        }
+        if (scrollAnim > 610 && scrollAnim < 1190 && $(window).width() > 1200) {
+          $('.funnels_control-item').hide();
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+          $('#animateText3').show();
+        }
+        if (scrollAnim > 1190 && scrollAnim < 1400 && $(window).width() > 1200) {
+          $('.funnels_control-item').hide();
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+          $('#animateText4').show();
+        }
+        if (scrollAnim > 1400 && $(window).width() > 1200) {
+          $('.funnels_control-item').hide();
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+          $('#animateText5').show();
+        }
+      })
+
+    }
+  })
+
 
 
 
