@@ -202,7 +202,7 @@ $(document).ready(function () {
   /*new*/
 
   /*  $('.funnels_control-item').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated fadeInUp', // Class to add to the elements when they are visible
+      classToAdd: 'visible animated fadeIn', // Class to add to the elements when they are visible
       classToRemove: 'hidden_animation',
       repeat: false,
       offset: '50%',
@@ -221,18 +221,9 @@ $(document).ready(function () {
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
+      
       {
         breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          dots: true,
-          adaptiveHeight: true
-
-        }
-    },
-      {
-        breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -249,7 +240,7 @@ $(document).ready(function () {
   var scrollAnim;
 
   if ($(window).width() < 1200) {
-    $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeInUp')
+    $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
     $('#animateText1').show();
     scrollAnim = -1;
   } else {
@@ -266,32 +257,32 @@ $(document).ready(function () {
 
       if (scrollAnim > 0 && scrollAnim < 230 && $(window).width() > 1200) {
         $('.funnels_control-item').hide();
-        $('.funnels_control-item').removeClass('visible animated fadeInUp').addClass('hidden_animation')
-        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeInUp')
+        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
         $('#animateText1').show();
       }
       if (scrollAnim > 230 && scrollAnim < 610 && $(window).width() > 1200) {
         $('.funnels_control-item').hide();
-        $('.funnels_control-item').removeClass('visible animated fadeInUp').addClass('hidden_animation')
-        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeInUp')
+        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
         $('#animateText2').show();
       }
-      if (scrollAnim > 610 && scrollAnim < 1190 && $(window).width() > 1200) {
+      if (scrollAnim > 610 && scrollAnim < 940 && $(window).width() > 1200) {
         $('.funnels_control-item').hide();
-        $('.funnels_control-item').removeClass('visible animated fadeInUp').addClass('hidden_animation')
-        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeInUp')
+        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
         $('#animateText3').show();
       }
-      if (scrollAnim > 1190 && scrollAnim < 1400 && $(window).width() > 1200) {
+      if (scrollAnim > 940 && scrollAnim < 1400 && $(window).width() > 1200) {
         $('.funnels_control-item').hide();
-        $('.funnels_control-item').removeClass('visible animated fadeInUp').addClass('hidden_animation')
-        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeInUp')
+        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
         $('#animateText4').show();
       }
       if (scrollAnim > 1400 && $(window).width() > 1200) {
         $('.funnels_control-item').hide();
-        $('.funnels_control-item').removeClass('visible animated fadeInUp').addClass('hidden_animation')
-        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeInUp')
+        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
         $('#animateText5').show();
       }
     })
@@ -301,13 +292,13 @@ $(document).ready(function () {
   $(window).resize(function () {
 
     if ($(window).width() < 1200) {
-      $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeInUp')
+      $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
       $('#animateText1').show();
 
       scrollAnim = -1;
     } else {
       $('.funnels_control-item').hide();
-      $('.funnels_control-item').removeClass('visible animated fadeInUp').addClass('hidden_animation')
+      $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
       $(window).scroll(function (e) {
 
         var s = $(window).scrollTop(),
@@ -321,32 +312,32 @@ $(document).ready(function () {
 
         if (scrollAnim > 0 && scrollAnim < 230 && $(window).width() > 1200) {
           $('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeInUp').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeInUp')
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
           $('#animateText1').show();
         }
         if (scrollAnim > 230 && scrollAnim < 610 && $(window).width() > 1200) {
           $('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeInUp').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeInUp')
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
           $('#animateText2').show();
         }
-        if (scrollAnim > 610 && scrollAnim < 1190 && $(window).width() > 1200) {
+        if (scrollAnim > 610 && scrollAnim < 940 && $(window).width() > 1200) {
           $('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeInUp').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeInUp')
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
           $('#animateText3').show();
         }
-        if (scrollAnim > 1190 && scrollAnim < 1400 && $(window).width() > 1200) {
+        if (scrollAnim > 940 && scrollAnim < 1400 && $(window).width() > 1200) {
           $('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeInUp').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeInUp')
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
           $('#animateText4').show();
         }
         if (scrollAnim > 1400 && $(window).width() > 1200) {
           $('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeInUp').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeInUp')
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
           $('#animateText5').show();
         }
       })

@@ -197,7 +197,7 @@
   padding: 90px 0;
 }
 .funnels_control {
-  padding: 90px 0 200px;
+  padding: 90px 0 250px;
   .funnels-title {
     margin-bottom: 60px;
   }
@@ -480,7 +480,7 @@ position: sticky;
     margin-bottom: 0;
   }
   .order-btn {
-    margin-top: 122px;
+    margin-top: 40px;
   }
 }
 
@@ -648,6 +648,19 @@ position: sticky;
 
 .funnels_faq {
   padding: 100px 0;
+    .faq-item {
+
+  &:before {
+    content: "";
+    background: url('../img/funnels/arrow.svg') no-repeat center;
+    height: 16px;
+    width: 8px;
+    position: absolute;
+    top: 22px;
+    right: 30px;
+//    background-size: 100%;
+  }
+  }
 }
 
 .funnels_faq-item {
@@ -683,7 +696,9 @@ position: sticky;
     max-width: 267px;
     margin-left: 0;
     &:hover {
-      background: 0 0;
+      background: #008FD6;
+    border: 2px solid #008FD6;
+      
     }
   }
 }
@@ -700,4 +715,17 @@ html {
 
 .funnels_head {
   padding: 90px 0;
+}
+
+.pricing_funnels {
+  .h2-title {
+    font-family: Helvetica Now Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 51px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    margin-bottom: 33px;
+  }
 }
