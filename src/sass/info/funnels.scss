@@ -180,6 +180,9 @@
 .funnels-btn {
       max-width: 313px;
     padding: 11px 18px 12px;
+  &:active {
+     padding: 12px 18px 11px;
+  }
 }
 
 .title-button {
@@ -197,7 +200,7 @@
   padding: 90px 0;
 }
 .funnels_control {
-  padding: 90px 0 250px;
+  padding: 90px 0 350px;
   .funnels-title {
     margin-bottom: 60px;
   }
@@ -796,7 +799,7 @@ border-radius: 1.80793px;
 background: #142948;
 border-radius: 3.61587px;
     &:hover {
-      background: #19153E;
+      background: #000;
     }
   }
     
