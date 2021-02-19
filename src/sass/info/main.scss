@@ -980,6 +980,7 @@ border-top: 1px dashed #FFFFFF;
   &:hover, &:focus {
     color: #fff;
     background: linear-gradient(0deg, #FF4F57, #FF4F57), linear-gradient(0deg, rgba(255, 75, 17, .3), rgba(255, 75, 17, .3)), linear-gradient(0deg, #FB4A94 0, #FF6565 100%);
+    outline: 0;
   }
 }
 .xs-block {
