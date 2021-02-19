@@ -714,7 +714,21 @@ html {
 }
 
 .funnels_head {
-  padding: 90px 0;
+  padding: 129px 0 0;
+  .container {
+    position: relative;
+    max-width: 1340px;
+    &:before {
+      content: "";
+      background: url('../img/funnels/bg12.png') no-repeat center;
+      width: 1000px;
+      height: 688px;
+      position: absolute;
+      top: 0;
+      right: -5px;
+      z-index: 0;
+    }
+  }
 }
 
 .pricing_funnels {
@@ -727,5 +741,127 @@ html {
     letter-spacing: -0.01em;
     color: #FFFFFF;
     margin-bottom: 33px;
+  }
+}
+
+.funnels-tmpl {
+  .nav {
+    background: #fff;
+    .menu li .header__item, .menu li a {
+          color: #19153E;
+    }
+   .menu li a.pricing-btn {
+      color: #fff;
+    }
+    .expand__item .expand__icon {
+    fill: #19153E!important;
+}
+  }
+}
+
+.funnels_head-item {
+  background: #FF6067;
+box-shadow: 18.0793px 15.3674px 12.6555px rgba(0, 0, 0, 0.05);
+border-radius: 1.80793px;
+  padding: 40px 72px 50px;
+  margin-top: 66px;
+  h1 {
+    font-family: Helvetica Now Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 79px;
+    line-height: 87px;
+    color: #FDFEFE;
+    margin-bottom: 54px;
+  }
+  
+  .funnels_head-content {
+    display: flex;
+    margin-bottom: 39px;
+    div {
+      font-family: Helvetica Now Display;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 26px;
+      color: #FFFFFF;
+      margin-left: 19px;
+      margin-right: 8px;
+    }
+    
+  }
+  
+  .order-btn {
+    max-width: 261px;
+background: #142948;
+border-radius: 3.61587px;
+    &:hover {
+      background: #19153E;
+    }
+  }
+    
+}
+
+.funnels_head-title {
+  font-family: Helvetica Now Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 57px;
+  color: #FFFFFF;
+  margin-bottom: 17px;
+  max-width: 485px;
+  margin-top: 89px;
+  margin-left: 94px;
+}
+
+.funnels_head-frame {
+  position: relative;
+       margin-bottom: -450px;
+  
+  .desktop {
+    background: url('../img/funnels/laptop.png')no-repeat center;
+    width: 774px;
+    height: 502px;
+    background-size: 100%;
+    padding-top: 16px;
+    padding: 16px 87px 81px 87px;
+    position: relative;
+    margin-left: 18px;
+    img {
+      width: 100%;
+      background: #183949;
+    }
+  }
+  .mobile {
+    background: url('../img/funnels/frame4208.png') no-repeat center;
+    width: 240px;
+    height: 510px;
+    padding: 9px 19px;
+    transform: translateY(-70%);
+    img {
+      width: 100%;
+      
+    }
+  }
+}
+
+.funnels-subtitle {
+  font-family: Helvetica Now Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  color: #505876;
+  margin-bottom: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.funnels_lending-frame {
+  img {
+    width: 100%;
   }
 }

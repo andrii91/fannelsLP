@@ -445,7 +445,8 @@
     padding-left: 0;
     position: static;
     transform: none;
-margin-top: 90px;
+    margin-top: 90px;
+
     img {
       width: 580px;
       max-width: inherit;
@@ -478,12 +479,41 @@ margin-top: 90px;
     }
 
   }
-  
+
   main {
     overflow: visible;
   }
-  .funnels_testimonials {
-  overflow: hidden
-}
 
+  .funnels_testimonials {
+    overflow: hidden
+  }
+
+  .funnels_head {
+    padding-top: 145px;
+  }
+
+  .funnels_head-item {
+    margin-top: 100px;
+  }
+
+  .funnels_head .container:before {
+    top: 0;
+    height: 688px;
+  }
+
+  &.funnels-tmpl #menu li .header__item,
+  &.funnels-tmpl #menu li a,
+  &.funnels-tmpl .menu#menu li .header__item,
+  &.funnels-tmpl .menu#menu li a {
+    color: #19153E !important;
+
+  }
+  &.funnels-tmpl #menu li a.pricing-btn, &.funnels-tmpl .menu#menu li a.pricing-btn {
+    color: #ffffff !important;
+    
+  }
+
+  .nav .expand__content {
+    min-height: 365px;
+  }
 }
