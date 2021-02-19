@@ -90,7 +90,7 @@ main {
   .logo {
     display: inline-block;
 
-    svg {
+    svg, img {
       width: 160px;
     }
   }
@@ -146,7 +146,7 @@ main {
     .logo {
       margin-bottom: 30px;
 
-      svg {
+      svg, img {
         width: 175px;
       }
     }
