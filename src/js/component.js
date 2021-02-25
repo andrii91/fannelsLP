@@ -286,7 +286,11 @@ $(document).ready(function () {
 
         opacity2 = (scrollAnim - 230) * 2 / 380;
 
-        $('#animateText1').css('opacity', (opacity1 - (opacity2 + 0.3)));
+        //        $('#animateText1').css('opacity', (opacity1 - (opacity2 + 0.3)));
+        $('#animateText1').css({
+          'opacity': (opacity1 - (opacity2 + 0.3)),
+          'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity2 * 400 + ')'
+        });
 
         $('#animateText2').css('opacity', opacity2);
 
@@ -301,7 +305,11 @@ $(document).ready(function () {
 
         opacity3 = (scrollAnim - 610) * 2 / 330;
 
-        $('#animateText2').css('opacity', (opacity2 - (opacity3 + 1)));
+        $('#animateText2').css({
+          'opacity': (opacity2 - (opacity3 + 1)),
+          'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity3 * 400 + ')'
+        });
+
 
         $('#animateText3').css('opacity', opacity3);
 
@@ -317,7 +325,13 @@ $(document).ready(function () {
 
         opacity4 = (scrollAnim - 940) * 2 / 460;
 
-        $('#animateText3').css('opacity', (opacity3 - (opacity4 + 0.7)));
+        $('#animateText3').css({
+          'opacity': (opacity3 - (opacity4 + 0.7)),
+          'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity4 * 460 + ')'
+        });
+
+
+        //        $('#animateText3').css('opacity', (opacity3 - (opacity4 + 0.7)));
 
         $('#animateText4').css('opacity', opacity4);
 
@@ -331,9 +345,15 @@ $(document).ready(function () {
 
         $('.funnels_control-item').css('opacity', 0);
 
-        opacity5 = (scrollAnim - 1400) * 2 / 625;
+        opacity5 = (scrollAnim - 1400) * 2 / 425;
 
-        $('#animateText4').css('opacity', (opacity4 - (opacity5 + 1.5)));
+        $('#animateText4').css({
+          'opacity': (opacity4 - (opacity5 + 1.5)),
+          'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity5 * 625 + ')'
+        });
+
+
+        //        $('#animateText4').css('opacity', (opacity4 - (opacity5 + 1.5)));
 
         $('#animateText5').css('opacity', opacity5);
 
@@ -383,7 +403,11 @@ $(document).ready(function () {
 
           opacity2 = (scrollAnim - 230) * 2 / 380;
 
-          $('#animateText1').css('opacity', (opacity1 - (opacity2 + 0.3)));
+          //        $('#animateText1').css('opacity', (opacity1 - (opacity2 + 0.3)));
+          $('#animateText1').css({
+            'opacity': (opacity1 - (opacity2 + 0.3)),
+            'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity2 * 400 + ')'
+          });
 
           $('#animateText2').css('opacity', opacity2);
 
@@ -398,7 +422,11 @@ $(document).ready(function () {
 
           opacity3 = (scrollAnim - 610) * 2 / 330;
 
-          $('#animateText2').css('opacity', (opacity2 - (opacity3 + 1)));
+          $('#animateText2').css({
+            'opacity': (opacity2 - (opacity3 + 1)),
+            'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity3 * 400 + ')'
+          });
+
 
           $('#animateText3').css('opacity', opacity3);
 
@@ -414,7 +442,13 @@ $(document).ready(function () {
 
           opacity4 = (scrollAnim - 940) * 2 / 460;
 
-          $('#animateText3').css('opacity', (opacity3 - (opacity4 + 0.7)));
+          $('#animateText3').css({
+            'opacity': (opacity3 - (opacity4 + 0.7)),
+            'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity4 * 460 + ')'
+          });
+
+
+          //        $('#animateText3').css('opacity', (opacity3 - (opacity4 + 0.7)));
 
           $('#animateText4').css('opacity', opacity4);
 
@@ -428,9 +462,15 @@ $(document).ready(function () {
 
           $('.funnels_control-item').css('opacity', 0);
 
-          opacity5 = (scrollAnim - 1400) * 2 / 625;
+          opacity5 = (scrollAnim - 1400) * 2 / 425;
 
-          $('#animateText4').css('opacity', (opacity4 - (opacity5 + 1.5)));
+          $('#animateText4').css({
+            'opacity': (opacity4 - (opacity5 + 1.5)),
+            'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity5 * 625 + ')'
+          });
+
+
+          //        $('#animateText4').css('opacity', (opacity4 - (opacity5 + 1.5)));
 
           $('#animateText5').css('opacity', opacity5);
 
@@ -441,7 +481,6 @@ $(document).ready(function () {
           $('#animateText5').show();*/
         }
       })
-
     }
   })
 
