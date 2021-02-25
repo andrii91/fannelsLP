@@ -230,6 +230,13 @@
   //  top: 100px;
 //  display: none;
     transition: .1s;
+  
+    -webkit-transform: translate3d(0, 0, 0) translateZ(0);
+    transform: translate3d(0, 0, 0) translateZ(0);
+
+//  transform: translate3d(0,0,0);
+  will-change: transform, opacity;
+
   &#animateText1 {
     opacity: 1;
   }
@@ -751,6 +758,12 @@
 .funnels_control-items {
 //  height: 100%;
   min-height: calc(100% - 140px);
+  /*.funnels-title {
+    position: sticky;
+    top: 90px;
+    background: #fff;
+    z-index: 999;
+  }*/
 }
 
 html {
