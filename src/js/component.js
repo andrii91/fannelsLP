@@ -238,13 +238,13 @@ $(document).ready(function () {
 
 
   var scrollAnim;
+  var opacity1, opacity2, opacity3, opacity4, opacity5, opacity6;
 
   if ($(window).width() < 1200) {
     /*    $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
         $('#animateText1').show();
         scrollAnim = -1;*/
   } else {
-    var opacity1, opacity2, opacity3, opacity4, opacity5, opacity6;
 
     /*      var wnd = $(window),
           opacityControl = $('div') ;
@@ -269,28 +269,31 @@ $(document).ready(function () {
 
 
 
-      if (scrollAnim > 0 && scrollAnim < 230 && $(window).width() > 1200) {
+      if (scrollAnim > 0 && scrollAnim < 130 && $(window).width() > 1200) {
 
-        opacity1 = scrollAnim * 2 / 530;
+        opacity1 = scrollAnim * 2 / 330;
 
         $('.funnels_control-item').css('opacity', 0);
 
-        $('#animateText1').css('opacity', 1);
+         $('#animateText1').css({
+            'opacity': 1,
+            'transform': 'matrix(1, 0, 0, 1, 0, 0)'
+          });
         /*$('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
         $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
         $('#animateText1').show();*/
       }
-      if (scrollAnim > 230 && scrollAnim < 610 && $(window).width() > 1200) {
+      if (scrollAnim > 130 && scrollAnim < 610 && $(window).width() > 1200) {
         $('.funnels_control-item').css('opacity', 0);
 
-        opacity2 = (scrollAnim - 230) * 2 / 380;
+        opacity2 = (scrollAnim - 130) * 2 / 480;
 
         //        $('#animateText1').css('opacity', (opacity1 - (opacity2 + 0.3)));
         $('#animateText1').css({
-          'opacity': (opacity1 - (opacity2 + 0.3)),
-          'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity2 * 400 + ')'
-        });
+            'opacity': (opacity1 - (opacity2 + 0.3)),
+            'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity2 *  $(window).height() + ')'
+          });
 
         $('#animateText2').css('opacity', opacity2);
 
@@ -307,7 +310,7 @@ $(document).ready(function () {
 
         $('#animateText2').css({
           'opacity': (opacity2 - (opacity3 + 1)),
-          'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity3 * 400 + ')'
+          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 *  $(window).height() + ')'
         });
 
 
@@ -327,7 +330,7 @@ $(document).ready(function () {
 
         $('#animateText3').css({
           'opacity': (opacity3 - (opacity4 + 0.7)),
-          'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity4 * 460 + ')'
+          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity4 *  $(window).height() + ')'
         });
 
 
@@ -349,7 +352,7 @@ $(document).ready(function () {
 
         $('#animateText4').css({
           'opacity': (opacity4 - (opacity5 + 1.5)),
-          'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity5 * 625 + ')'
+          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity5 *  $(window).height() + ')'
         });
 
 
@@ -406,7 +409,7 @@ $(document).ready(function () {
           //        $('#animateText1').css('opacity', (opacity1 - (opacity2 + 0.3)));
           $('#animateText1').css({
             'opacity': (opacity1 - (opacity2 + 0.3)),
-            'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity2 * 400 + ')'
+            'transform': 'matrix(1, 0, 0, 1, 0, -' + $('#animateText1').height() + opacity2 * 600 + ')'
           });
 
           $('#animateText2').css('opacity', opacity2);
