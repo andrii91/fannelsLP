@@ -1,7 +1,9 @@
 $(document).ready(function () {
   $(window).scroll(function () {
+    console.log($(window).scrollTop())
     return $('.nav').toggleClass("fixed", $(window).scrollTop() > 0);
   });
+  
 
   $('#nav-icon').click(function () {
     $('.hamburger').toggleClass('is-active')
@@ -241,22 +243,11 @@ $(document).ready(function () {
   var opacity1, opacity2, opacity3, opacity4, opacity5, opacity6;
 
   if ($(window).width() < 1200) {
-    /*    $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
         $('#animateText1').show();
-        scrollAnim = -1;*/
+        scrollAnim = -1;
   } else {
 
-    /*      var wnd = $(window),
-          opacityControl = $('div') ;
-
-        wnd.scroll(function(){
-          var top = wnd.scrollTop(),
-              opacity = top > 500 ? 1 : top * 2 / 1000;
-
-          opacityControl.css('opacity', opacity);
-      });
-    
-    */
 
     $(window).scroll(function (e) {
 
@@ -267,46 +258,68 @@ $(document).ready(function () {
 
       console.log(scrollAnim);
 
-
+        $('#fix').css({
+          'position' : 'absolute',
+          'max-width' : $('.funnels_control-items').width(),
+          'top' : '0px',
+          
+        })
 
       if (scrollAnim > 0 && scrollAnim < 130 && $(window).width() > 1200) {
+        
+        $('#ptfix').css('padding-top', $('#fix').height())
+        
+        $('#fix').css({
+          'position' : 'fixed',
+          'top' : '80px',
+          
+        })
 
+/*
         opacity1 = scrollAnim * 2 / 330;
-
         $('.funnels_control-item').css('opacity', 0);
 
          $('#animateText1').css({
             'opacity': 1,
             'transform': 'matrix(1, 0, 0, 1, 0, 0)'
-          });
-        /*$('.funnels_control-item').hide();
+          });*/
+        $('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
         $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-        $('#animateText1').show();*/
+        $('#animateText1').show();
       }
-      if (scrollAnim > 130 && scrollAnim < 610 && $(window).width() > 1200) {
-        $('.funnels_control-item').css('opacity', 0);
+      if (scrollAnim > 129 && scrollAnim < 610 && $(window).width() > 1200) {
+//        $('.funnels_control-item').css('opacity', 0);
+        $('#fix').css({
+          'position' : 'fixed',
+          'top' : '80px',
+          
+        })
 
         opacity2 = (scrollAnim - 130) * 2 / 480;
 
-        //        $('#animateText1').css('opacity', (opacity1 - (opacity2 + 0.3)));
-        $('#animateText1').css({
+        /*$('#animateText1').css({
             'opacity': (opacity1 - (opacity2 + 0.3)),
             'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity2 *  $(window).height() + ')'
           });
 
-        $('#animateText2').css('opacity', opacity2);
+        $('#animateText2').css('opacity', opacity2);*/
 
-        /*$('.funnels_control-item').hide();
+        $('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
         $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-        $('#animateText2').show();*/
+        $('#animateText2').show();
       }
-      if (scrollAnim > 610 && scrollAnim < 940 && $(window).width() > 1200) {
+      if (scrollAnim > 609 && scrollAnim < 940 && $(window).width() > 1200) {
 
-        $('.funnels_control-item').css('opacity', 0);
+//        $('.funnels_control-item').css('opacity', 0);
+        $('#fix').css({
+          'position' : 'fixed',
+          'top' : '80px',
+          
+        })
 
-        opacity3 = (scrollAnim - 610) * 2 / 330;
+        /*opacity3 = (scrollAnim - 610) * 2 / 330;
 
         $('#animateText2').css({
           'opacity': (opacity2 - (opacity3 + 1)),
@@ -314,19 +327,24 @@ $(document).ready(function () {
         });
 
 
-        $('#animateText3').css('opacity', opacity3);
+        $('#animateText3').css('opacity', opacity3);*/
 
 
-        /* $('.funnels_control-item').hide();
+         $('.funnels_control-item').hide();
          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-         $('#animateText3').show();*/
+         $('#animateText3').show();
       }
-      if (scrollAnim > 940 && scrollAnim < 1400 && $(window).width() > 1200) {
+      if (scrollAnim > 939 && scrollAnim < 1400 && $(window).width() > 1200) {
 
-        $('.funnels_control-item').css('opacity', 0);
+//        $('.funnels_control-item').css('opacity', 0);
+        $('#fix').css({
+          'position' : 'fixed',
+          'top' : '80px',
+          
+        })
 
-        opacity4 = (scrollAnim - 940) * 2 / 460;
+       /* opacity4 = (scrollAnim - 940) * 2 / 460;
 
         $('#animateText3').css({
           'opacity': (opacity3 - (opacity4 + 0.7)),
@@ -334,21 +352,25 @@ $(document).ready(function () {
         });
 
 
-        //        $('#animateText3').css('opacity', (opacity3 - (opacity4 + 0.7)));
 
-        $('#animateText4').css('opacity', opacity4);
+        $('#animateText4').css('opacity', opacity4);*/
 
 
-        /*$('.funnels_control-item').hide();
+        $('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
         $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-        $('#animateText4').show();*/
+        $('#animateText4').show();
       }
-      if (scrollAnim > 1400 && $(window).width() > 1200) {
+      if (scrollAnim > 1399 && $(window).width() > 1200) {
 
-        $('.funnels_control-item').css('opacity', 0);
+//        $('.funnels_control-item').css('opacity', 0);
+        $('#fix').css({
+          'position' : 'fixed',
+          'top' : '80px',
+          
+        })
 
-        opacity5 = (scrollAnim - 1400) * 2 / 425;
+        /*opacity5 = (scrollAnim - 1400) * 2 / 425;
 
         $('#animateText4').css({
           'opacity': (opacity4 - (opacity5 + 1.5)),
@@ -356,15 +378,20 @@ $(document).ready(function () {
         });
 
 
-        //        $('#animateText4').css('opacity', (opacity4 - (opacity5 + 1.5)));
-
         $('#animateText5').css('opacity', opacity5);
+*/
 
-
-        /*$('.funnels_control-item').hide();
+        $('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
         $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-        $('#animateText5').show();*/
+        $('#animateText5').show();
+      }
+      if (scrollAnim > 1576 && $(window).width() > 1200) {
+        $('#fix').css({
+          'position' : 'absolute',
+          'top' : '1576px',
+          
+        })
       }
     })
 
@@ -372,119 +399,161 @@ $(document).ready(function () {
 
   $(window).resize(function () {
 
-    if ($(window).width() < 1200) {
-      /* $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-       $('#animateText1').show();
-
-       scrollAnim = -1;*/
-    } else {
-      $(window).scroll(function (e) {
-
-        var s = $(window).scrollTop(),
-          topSection = $('.funnels_control').offset().top;
-
-        scrollAnim = s - topSection;
-
-        console.log(scrollAnim);
+      if ($(window).width() < 1200) {
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+        $('#animateText1').show();
+        scrollAnim = -1;
+  } else {
 
 
+    $(window).scroll(function (e) {
 
-        if (scrollAnim > 0 && scrollAnim < 230 && $(window).width() > 1200) {
+      var s = $(window).scrollTop(),
+        topSection = $('.funnels_control').offset().top;
 
-          opacity1 = scrollAnim * 2 / 530;
+      scrollAnim = s - topSection;
 
-          $('.funnels_control-item').css('opacity', 0);
+      console.log(scrollAnim);
 
-          $('#animateText1').css('opacity', 1);
-          /*$('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-          $('#animateText1').show();*/
-        }
-        if (scrollAnim > 230 && scrollAnim < 610 && $(window).width() > 1200) {
-          $('.funnels_control-item').css('opacity', 0);
+        $('#fix').css({
+          'position' : 'absolute',
+          'max-width' : $('.funnels_control-items').width(),
+          'top' : '0px',
+          
+        })
 
-          opacity2 = (scrollAnim - 230) * 2 / 380;
+      if (scrollAnim > 0 && scrollAnim < 130 && $(window).width() > 1200) {
+        
+        $('#ptfix').css('padding-top', $('#fix').height())
+        
+        $('#fix').css({
+          'position' : 'fixed',
+          'top' : '80px',
+          
+        })
 
-          //        $('#animateText1').css('opacity', (opacity1 - (opacity2 + 0.3)));
-          $('#animateText1').css({
+/*
+        opacity1 = scrollAnim * 2 / 330;
+        $('.funnels_control-item').css('opacity', 0);
+
+         $('#animateText1').css({
+            'opacity': 1,
+            'transform': 'matrix(1, 0, 0, 1, 0, 0)'
+          });*/
+        $('.funnels_control-item').hide();
+        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+        $('#animateText1').show();
+      }
+      if (scrollAnim > 129 && scrollAnim < 610 && $(window).width() > 1200) {
+//        $('.funnels_control-item').css('opacity', 0);
+        $('#fix').css({
+          'position' : 'fixed',
+          'top' : '80px',
+          
+        })
+
+        opacity2 = (scrollAnim - 130) * 2 / 480;
+
+        /*$('#animateText1').css({
             'opacity': (opacity1 - (opacity2 + 0.3)),
-            'transform': 'matrix(1, 0, 0, 1, 0, -' + $('#animateText1').height() + opacity2 * 600 + ')'
+            'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity2 *  $(window).height() + ')'
           });
 
-          $('#animateText2').css('opacity', opacity2);
+        $('#animateText2').css('opacity', opacity2);*/
 
-          /*$('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-          $('#animateText2').show();*/
-        }
-        if (scrollAnim > 610 && scrollAnim < 940 && $(window).width() > 1200) {
+        $('.funnels_control-item').hide();
+        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+        $('#animateText2').show();
+      }
+      if (scrollAnim > 609 && scrollAnim < 940 && $(window).width() > 1200) {
 
-          $('.funnels_control-item').css('opacity', 0);
+//        $('.funnels_control-item').css('opacity', 0);
+        $('#fix').css({
+          'position' : 'fixed',
+          'top' : '80px',
+          
+        })
 
-          opacity3 = (scrollAnim - 610) * 2 / 330;
+        /*opacity3 = (scrollAnim - 610) * 2 / 330;
 
-          $('#animateText2').css({
-            'opacity': (opacity2 - (opacity3 + 1)),
-            'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity3 * 400 + ')'
-          });
-
-
-          $('#animateText3').css('opacity', opacity3);
-
-
-          /* $('.funnels_control-item').hide();
-           $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-           $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-           $('#animateText3').show();*/
-        }
-        if (scrollAnim > 940 && scrollAnim < 1400 && $(window).width() > 1200) {
-
-          $('.funnels_control-item').css('opacity', 0);
-
-          opacity4 = (scrollAnim - 940) * 2 / 460;
-
-          $('#animateText3').css({
-            'opacity': (opacity3 - (opacity4 + 0.7)),
-            'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity4 * 460 + ')'
-          });
+        $('#animateText2').css({
+          'opacity': (opacity2 - (opacity3 + 1)),
+          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 *  $(window).height() + ')'
+        });
 
 
-          //        $('#animateText3').css('opacity', (opacity3 - (opacity4 + 0.7)));
-
-          $('#animateText4').css('opacity', opacity4);
+        $('#animateText3').css('opacity', opacity3);*/
 
 
-          /*$('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-          $('#animateText4').show();*/
-        }
-        if (scrollAnim > 1400 && $(window).width() > 1200) {
+         $('.funnels_control-item').hide();
+         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+         $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+         $('#animateText3').show();
+      }
+      if (scrollAnim > 939 && scrollAnim < 1400 && $(window).width() > 1200) {
 
-          $('.funnels_control-item').css('opacity', 0);
+//        $('.funnels_control-item').css('opacity', 0);
+        $('#fix').css({
+          'position' : 'fixed',
+          'top' : '80px',
+          
+        })
 
-          opacity5 = (scrollAnim - 1400) * 2 / 425;
+       /* opacity4 = (scrollAnim - 940) * 2 / 460;
 
-          $('#animateText4').css({
-            'opacity': (opacity4 - (opacity5 + 1.5)),
-            'transform': 'matrix(1, 0, 0, 1, 0, -' + opacity5 * 625 + ')'
-          });
-
-
-          //        $('#animateText4').css('opacity', (opacity4 - (opacity5 + 1.5)));
-
-          $('#animateText5').css('opacity', opacity5);
+        $('#animateText3').css({
+          'opacity': (opacity3 - (opacity4 + 0.7)),
+          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity4 *  $(window).height() + ')'
+        });
 
 
-          /*$('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-          $('#animateText5').show();*/
-        }
-      })
-    }
+
+        $('#animateText4').css('opacity', opacity4);*/
+
+
+        $('.funnels_control-item').hide();
+        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+        $('#animateText4').show();
+      }
+      if (scrollAnim > 1399 && $(window).width() > 1200) {
+
+//        $('.funnels_control-item').css('opacity', 0);
+        $('#fix').css({
+          'position' : 'fixed',
+          'top' : '80px',
+          
+        })
+
+        /*opacity5 = (scrollAnim - 1400) * 2 / 425;
+
+        $('#animateText4').css({
+          'opacity': (opacity4 - (opacity5 + 1.5)),
+          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity5 *  $(window).height() + ')'
+        });
+
+
+        $('#animateText5').css('opacity', opacity5);
+*/
+
+        $('.funnels_control-item').hide();
+        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+        $('#animateText5').show();
+      }
+      if (scrollAnim > 1576 && $(window).width() > 1200) {
+        $('#fix').css({
+          'position' : 'absolute',
+          'top' : '1576px',
+          
+        })
+      }
+    })
+
+  }
+
   })
 
 

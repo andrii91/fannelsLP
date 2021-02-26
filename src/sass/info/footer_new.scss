@@ -48,7 +48,7 @@
       display: block;
       font-family: Helvetica Now Display;
       font-style: normal;
-      font-weight: 800;
+      font-weight: normal;
       font-size: 18px;
       line-height: 26px;
       letter-spacing: -0.02em;
@@ -70,7 +70,7 @@
   z-index: 0;
 
   margin-top: -73px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.4);
 
 
 }
@@ -116,9 +116,10 @@ position: relative;
     font-size: 18px;
     line-height: 26px;
     letter-spacing: -0.02em;
-    color: #FFFFFF;
 
     margin-bottom: 22px;
+
+color: rgba(255, 255, 255, 0.3);
 
   }
 

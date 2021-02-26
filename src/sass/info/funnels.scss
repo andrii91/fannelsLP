@@ -209,6 +209,14 @@
 
 .funnels_control {
   padding: 90px 0 150px;
+  
+  .container {
+    position: relative;
+    .col-xl-5 {
+      position: relative;
+      
+    }
+  }
 
   .funnels-title {
     margin-bottom: 60px;
@@ -222,20 +230,19 @@
 }
 
 .funnels_control-item {
-  opacity: 0;
+//  opacity: 0;
   max-width: 450px;
   position: sticky;
   position: -webkit-sticky;
   top: 40%;
   //  top: 100px;
-//  display: none;
-    transition: .1s;
+  display: none;
+//    transition: .1s;
   
-    -webkit-transform: translate3d(0, 0, 0) translateZ(0);
-    transform: translate3d(0, 0, 0) translateZ(0);
-
-//  transform: translate3d(0,0,0);
-  will-change: transform, opacity;
+//    -webkit-transform: translate3d(0, 0, 0) translateZ(0);
+//    transform: translate3d(0, 0, 0) translateZ(0);
+//
+//  will-change: transform, opacity;
 
   &#animateText1 {
     opacity: 1;
@@ -581,9 +588,9 @@
     width: 1440px;
     height: 606px;
     position: absolute;
-    top: 50%;
+    top: -70px;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, 0%);
     z-index: -1;
   }
 
@@ -757,7 +764,7 @@
 
 .funnels_control-items {
 //  height: 100%;
-  min-height: calc(100% - 140px);
+  min-height: calc(100% + 75px);
   /*.funnels-title {
     position: sticky;
     top: 90px;
@@ -843,7 +850,10 @@ html {
   .funnels_head-content {
     display: flex;
     margin-bottom: 39px;
-
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: left;
     div {
       font-family: Helvetica Now Display;
       font-style: normal;
@@ -863,7 +873,7 @@ html {
     border-radius: 3.61587px;
 
     &:hover {
-      background: #000;
+      background: #003466;
     }
   }
 
@@ -1444,13 +1454,7 @@ $vw-viewport: 1700;
       margin-bottom: vw(50px);
 
       .svg {
-        width: vw(34px);
-        margin-right: vw(20px);
-
-        svg {
-          width: 100%;
-          height: inherit;
-        }
+        
       }
 
       p {
@@ -1496,7 +1500,7 @@ $vw-viewport: 1700;
   }
 
   .funnels_control-items {
-    min-height: calc(100% - vw(140px));
+    min-height: calc(100% + vw(75px));
   }
 
   .container {
@@ -1670,4 +1674,18 @@ $vw-viewport: 1700;
     }
   }
 
+}
+#fix {
+  background: #fff;
+  z-index: 9;
+  position: absolute;
+      -webkit-transform: translate3d(0, 0, 0) translateZ(0);
+    transform: translate3d(0, 0, 0) translateZ(0);
+
+//  transform: translate3d(0,0,0);
+  will-change: transform, opacity;
+}
+
+#ptfix {
+  padding-top: 210px;
 }
