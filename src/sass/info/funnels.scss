@@ -234,19 +234,20 @@
   max-width: 450px;
   position: sticky;
   position: -webkit-sticky;
-  top: 40%;
+  top: 54%;
   //  top: 100px;
   display: none;
-//    transition: .1s;
+    transition: 0s;
   
 //    -webkit-transform: translate3d(0, 0, 0) translateZ(0);
 //    transform: translate3d(0, 0, 0) translateZ(0);
 //
 //  will-change: transform, opacity;
 
-  &#animateText1 {
+ /* &#animateText1 {
     opacity: 1;
-  }
+  }*/
+
 
   .title {
     font-family: Helvetica Now Display;
@@ -765,12 +766,14 @@
 .funnels_control-items {
 //  height: 100%;
   min-height: calc(100% + 75px);
-  /*.funnels-title {
+  position: relative;
+  .funnels-title {
     position: sticky;
-    top: 90px;
+    top: calc(30% + 60px);
     background: #fff;
-    z-index: 999;
-  }*/
+    z-index: 9;
+    margin-bottom: 40px;
+  }
 }
 
 html {
@@ -902,7 +905,7 @@ html {
     height: 502px;
     background-size: 100%;
     padding-top: 16px;
-    padding: 16px 87px 81px 87px;
+    padding: 16px 89px 81px 87px;
     position: relative;
     margin-left: 18px;
 
@@ -917,7 +920,7 @@ html {
     background-size: 100%;
     width: 240px;
     height: 510px;
-    padding: 9px 19px;
+    padding: 9px 19px 9px 20px;
     transform: translateY(-70%);
 
     img {
@@ -1035,7 +1038,7 @@ $vw-viewport: 1700;
       width: vw(774px);
       height: vw(502px);
       padding-top: vw(16px);
-      padding: vw(16px) vw(87px) vw(81px) vw(87px);
+      padding: vw(16px) vw(89px) vw(81px) vw(87px);
       margin-left: vw(18px);
 
     }
@@ -1043,7 +1046,7 @@ $vw-viewport: 1700;
     .mobile {
       width: vw(240px);
       height: vw(510px);
-      padding: vw(9px) vw(19px);
+      padding: vw(9px) vw(19px) vw(9px) vw(20px);
 
     }
   }
@@ -1296,7 +1299,7 @@ $vw-viewport: 1700;
   }
 
   .funnels_control {
-    padding: vw(90px) 0 vw(150px);
+//    padding: vw(90px) 0 vw(150px);
 
     .funnels-title {
       margin-bottom: vw(60px);
@@ -1578,7 +1581,6 @@ $vw-viewport: 1700;
 
 
   .footer_new {
-    padding: vw(50px) 0;
 
     .container {
       padding-left: vw(100px);
@@ -1655,7 +1657,6 @@ $vw-viewport: 1700;
   }
 
   .footer_new-politic {
-    padding-left: 5.556vw;
     padding-top: vw(5px);
 
     ul {
@@ -1687,5 +1688,5 @@ $vw-viewport: 1700;
 }
 
 #ptfix {
-  padding-top: 210px;
+  padding-top: 150px;
 }
