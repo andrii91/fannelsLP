@@ -1,9 +1,7 @@
 $(document).ready(function () {
   $(window).scroll(function () {
-    console.log($(window).scrollTop())
     return $('.nav').toggleClass("fixed", $(window).scrollTop() > 0);
   });
-
 
   $('#nav-icon').click(function () {
     $('.hamburger').toggleClass('is-active')
@@ -223,7 +221,7 @@ $(document).ready(function () {
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
-
+      
       {
         breakpoint: 1024,
         settings: {
@@ -240,15 +238,12 @@ $(document).ready(function () {
 
 
   var scrollAnim;
-  var opacity1, opacity2, opacity3, opacity4, opacity5, opacity6;
 
   if ($(window).width() < 1200) {
     $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
     $('#animateText1').show();
     scrollAnim = -1;
   } else {
-
-
     $(window).scroll(function (e) {
 
       var s = $(window).scrollTop(),
@@ -258,162 +253,37 @@ $(document).ready(function () {
 
       console.log(scrollAnim);
 
-      $('#fix').css({
-        'position': 'fixed',
-        'max-width': $('.funnels_control-items').width(),
-        'top': '0px',
-        'transition': '1s'
 
 
-      })
-
-
-
-
-      if (scrollAnim > (-300) && scrollAnim < 130 && $(window).width() > 1200) {
-
-        //        $('#ptfix').css('padding-top', $('#fix').height())
-
-        $('#fix').css({
-          //          'position': 'fixed',
-          'top': 'calc(29% + 60px)',
-          //          'transition': '.3s'
-
-        })
-        if (scrollAnim > ($(window).height() / 2)) {
-          $('#fix').css({
-            'transition': '0s'
-
-          })
-        }
-
-        /*
-                opacity1 = scrollAnim * 2 / 330;
-                $('.funnels_control-item').css('opacity', 0);
-
-                 $('#animateText1').css({
-                    'opacity': 1,
-                    'transform': 'matrix(1, 0, 0, 1, 0, 0)'
-                  });*/
+      if (scrollAnim > 0 && scrollAnim < 165 && $(window).width() > 1200) {
         $('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-        $('#animateText1').show();
+        $('#animateText1').removeClass('hidden_animation')
+        $('#animateText1').addClass('visible animated fadeIn').show();
       }
-      if (scrollAnim > 129 && scrollAnim < 610 && $(window).width() > 1200) {
-        //        $('.funnels_control-item').css('opacity', 0);
-        $('#fix').css({
-          //          'position': 'fixed',
-          'top': 'calc(29% + 60px)',
-          'transition': '0s'
-
-        })
-
-        opacity2 = (scrollAnim - 130) * 2 / 480;
-
-        /*$('#animateText1').css({
-            'opacity': (opacity1 - (opacity2 + 0.3)),
-            'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity2 *  $(window).height() + ')'
-          });
-
-        $('#animateText2').css('opacity', opacity2);*/
-
+      if (scrollAnim > 164 && scrollAnim < 610 && $(window).width() > 1200) {
         $('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-        $('#animateText2').show();
+        $('#animateText2').removeClass('hidden_animation')
+        $('#animateText2').addClass('visible animated fadeIn').show();
       }
-      if (scrollAnim > 609 && scrollAnim < 940 && $(window).width() > 1200) {
-
-        //        $('.funnels_control-item').css('opacity', 0);
-        $('#fix').css({
-          'position': 'fixed',
-          'top': 'calc(29% + 60px)',
-          'transition': '0s'
-
-        })
-
-        /*opacity3 = (scrollAnim - 610) * 2 / 330;
-
-        $('#animateText2').css({
-          'opacity': (opacity2 - (opacity3 + 1)),
-          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 *  $(window).height() + ')'
-        });
-
-
-        $('#animateText3').css('opacity', opacity3);*/
-
-
+      if (scrollAnim > 610 && scrollAnim < 1000 && $(window).width() > 1200) {
         $('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-        $('#animateText3').show();
+        $('#animateText3').removeClass('hidden_animation')
+        $('#animateText3').addClass('visible animated fadeIn').show();
       }
-      if (scrollAnim > 939 && scrollAnim < 1400 && $(window).width() > 1200) {
-
-        //        $('.funnels_control-item').css('opacity', 0);
-        $('#fix').css({
-          'position': 'fixed',
-          'top': 'calc(29% + 60px)',
-          'transition': '0s'
-
-        })
-
-        /* opacity4 = (scrollAnim - 940) * 2 / 460;
-
-         $('#animateText3').css({
-           'opacity': (opacity3 - (opacity4 + 0.7)),
-           'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity4 *  $(window).height() + ')'
-         });
-
-
-
-         $('#animateText4').css('opacity', opacity4);*/
-
-
+      if (scrollAnim > 940 && scrollAnim < 1350 && $(window).width() > 1200) {
         $('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-        $('#animateText4').show();
+        $('#animateText4').removeClass('hidden_animation')
+        $('#animateText4').addClass('visible animated fadeIn').show();
       }
-      if (scrollAnim > 1350 && $(window).width() > 1200) {
-
-        //        $('.funnels_control-item').css('opacity', 0);
-        $('#fix').css({
-          'position': 'fixed',
-          'top': 'calc(29% + 60px)',
-          'transition': '0s'
-
-        })
-
-        /*opacity5 = (scrollAnim - 1400) * 2 / 425;
-
-        $('#animateText4').css({
-          'opacity': (opacity4 - (opacity5 + 1.5)),
-          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity5 *  $(window).height() + ')'
-        });
-
-
-        $('#animateText5').css('opacity', opacity5);
-*/
-
+      if (scrollAnim > 1349 && $(window).width() > 1200) {
         $('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-        $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-        $('#animateText5').show();
-      }
-      if (scrollAnim > 1400 && $(window).width() > 1200) {
-        $('#stopfix').css({
-          'position': 'absolute',
-          'top': $('.funnels_control-items').height() - $('#animateText5').height() - $('#stopfix').height() - 40,
-
-        })
-      } else {
-        $('#stopfix').css({
-          'position': 'sticky',
-          'top': 'calc(29% + 60px)',
-
-        })
+        $('#animateText5').removeClass('hidden_animation')
+        $('#animateText5').addClass('visible animated fadeIn').show();
       }
     })
 
@@ -424,10 +294,11 @@ $(document).ready(function () {
     if ($(window).width() < 1200) {
       $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
       $('#animateText1').show();
+
       scrollAnim = -1;
     } else {
-
-
+      $('.funnels_control-item').hide();
+      $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
       $(window).scroll(function (e) {
 
         var s = $(window).scrollTop(),
@@ -437,163 +308,38 @@ $(document).ready(function () {
 
         console.log(scrollAnim);
 
-        $('#fix').css({
-          'position': 'fixed',
-          'max-width': $('.funnels_control-items').width(),
-          'top': '0px',
-          'transition': '1s'
 
 
-        })
-
-
-
-
-        if (scrollAnim > (-300) && scrollAnim < 130 && $(window).width() > 1200) {
-
-          //        $('#ptfix').css('padding-top', $('#fix').height())
-
-          $('#fix').css({
-            //          'position': 'fixed',
-            'top': 'calc(29% + 60px)',
-            //          'transition': '.3s'
-
-          })
-          if (scrollAnim > ($(window).height() / 2)) {
-            $('#fix').css({
-              'transition': '0s'
-
-            })
-          }
-
-          /*
-                  opacity1 = scrollAnim * 2 / 330;
-                  $('.funnels_control-item').css('opacity', 0);
-
-                   $('#animateText1').css({
-                      'opacity': 1,
-                      'transform': 'matrix(1, 0, 0, 1, 0, 0)'
-                    });*/
-          $('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-          $('#animateText1').show();
-        }
-        if (scrollAnim > 129 && scrollAnim < 610 && $(window).width() > 1200) {
-          //        $('.funnels_control-item').css('opacity', 0);
-          $('#fix').css({
-            //          'position': 'fixed',
-            'top': 'calc(29% + 60px)',
-            'transition': '0s'
-
-          })
-
-          opacity2 = (scrollAnim - 130) * 2 / 480;
-
-          /*$('#animateText1').css({
-              'opacity': (opacity1 - (opacity2 + 0.3)),
-              'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity2 *  $(window).height() + ')'
-            });
-
-          $('#animateText2').css('opacity', opacity2);*/
-
-          $('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-          $('#animateText2').show();
-        }
-        if (scrollAnim > 609 && scrollAnim < 940 && $(window).width() > 1200) {
-
-          //        $('.funnels_control-item').css('opacity', 0);
-          $('#fix').css({
-            'position': 'fixed',
-            'top': 'calc(29% + 60px)',
-            'transition': '0s'
-
-          })
-
-          /*opacity3 = (scrollAnim - 610) * 2 / 330;
-
-          $('#animateText2').css({
-            'opacity': (opacity2 - (opacity3 + 1)),
-            'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 *  $(window).height() + ')'
-          });
-
-
-          $('#animateText3').css('opacity', opacity3);*/
-
-
-          $('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-          $('#animateText3').show();
-        }
-        if (scrollAnim > 939 && scrollAnim < 1400 && $(window).width() > 1200) {
-
-          //        $('.funnels_control-item').css('opacity', 0);
-          $('#fix').css({
-            'position': 'fixed',
-            'top': 'calc(29% + 60px)',
-            'transition': '0s'
-
-          })
-
-          /* opacity4 = (scrollAnim - 940) * 2 / 460;
-
-           $('#animateText3').css({
-             'opacity': (opacity3 - (opacity4 + 0.7)),
-             'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity4 *  $(window).height() + ')'
-           });
-
-
-
-           $('#animateText4').css('opacity', opacity4);*/
-
-
-          $('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-          $('#animateText4').show();
-        }
-        if (scrollAnim > 1350 && $(window).width() > 1200) {
-
-          //        $('.funnels_control-item').css('opacity', 0);
-          $('#fix').css({
-            'position': 'fixed',
-            'top': 'calc(29% + 60px)',
-            'transition': '0s'
-
-          })
-
-          /*opacity5 = (scrollAnim - 1400) * 2 / 425;
-
-        $('#animateText4').css({
-          'opacity': (opacity4 - (opacity5 + 1.5)),
-          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity5 *  $(window).height() + ')'
-        });
-
-
-        $('#animateText5').css('opacity', opacity5);
-*/
-
-          $('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
-          $('#animateText5').show();
-        }
-        if (scrollAnim > 1400 && $(window).width() > 1200) {
-          $('#stopfix').css({
-            'position': 'absolute',
-            'top': $('.funnels_control-items').height() - $('#animateText5').height() - $('#stopfix').height() - 40,
-
-          })
-        } else {
-          $('#stopfix').css({
-            'position': 'sticky',
-            'top': 'calc(29% + 60px)',
-
-          })
-        }
+           if (scrollAnim > 0 && scrollAnim < 165 && $(window).width() > 1200) {
+              $('.funnels_control-item').hide();
+              $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+              $('#animateText1').removeClass('hidden_animation')
+              $('#animateText1').addClass('visible animated fadeIn').show();
+            }
+            if (scrollAnim > 164 && scrollAnim < 610 && $(window).width() > 1200) {
+              $('.funnels_control-item').hide();
+              $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+              $('#animateText2').removeClass('hidden_animation')
+              $('#animateText2').addClass('visible animated fadeIn').show();
+            }
+            if (scrollAnim > 610 && scrollAnim < 1000 && $(window).width() > 1200) {
+              $('.funnels_control-item').hide();
+              $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+              $('#animateText3').removeClass('hidden_animation')
+              $('#animateText3').addClass('visible animated fadeIn').show();
+            }
+            if (scrollAnim > 940 && scrollAnim < 1350 && $(window).width() > 1200) {
+              $('.funnels_control-item').hide();
+              $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+              $('#animateText4').removeClass('hidden_animation')
+              $('#animateText4').addClass('visible animated fadeIn').show();
+            }
+            if (scrollAnim > 1349 && $(window).width() > 1200) {
+              $('.funnels_control-item').hide();
+              $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+              $('#animateText5').removeClass('hidden_animation')
+              $('#animateText5').addClass('visible animated fadeIn').show();
+            }
       })
 
     }
