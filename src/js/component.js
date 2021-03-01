@@ -273,7 +273,7 @@ $(document).ready(function () {
         $('#animateText3').removeClass('hidden_animation')
         $('#animateText3').addClass('visible animated fadeIn').show();
       }
-      if (scrollAnim > 940 && scrollAnim < 1350 && $(window).width() > 1200) {
+      if (scrollAnim > 999 && scrollAnim < 1350 && $(window).width() > 1200) {
         $('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
         $('#animateText4').removeClass('hidden_animation')
@@ -328,7 +328,7 @@ $(document).ready(function () {
               $('#animateText3').removeClass('hidden_animation')
               $('#animateText3').addClass('visible animated fadeIn').show();
             }
-            if (scrollAnim > 940 && scrollAnim < 1350 && $(window).width() > 1200) {
+            if (scrollAnim > 999 && scrollAnim < 1350 && $(window).width() > 1200) {
               $('.funnels_control-item').hide();
               $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
               $('#animateText4').removeClass('hidden_animation')
