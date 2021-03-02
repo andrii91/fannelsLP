@@ -223,10 +223,22 @@
   }
 }
 
+#btnH {
+  position: sticky;
+  position: -webkit-sticky;
+    top: calc(100% - 120px);
+}
+.animate {
+  transition: .3s;
+}
+
 .funnels_control-img {
   margin-top: 90px;
   position: relative;
   height: inherit;
+  img {
+        max-width: 730px;
+  }
 }
 
 
@@ -767,7 +779,7 @@
   position: relative;
   .funnels-title {
     position: sticky;
-    top: calc(30% + 60px);
+    top: 80px;
     background: #fff;
     z-index: 9;
     margin-bottom: 40px;

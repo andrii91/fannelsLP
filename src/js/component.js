@@ -221,7 +221,7 @@ $(document).ready(function () {
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
-      
+
       {
         breakpoint: 1024,
         settings: {
@@ -238,6 +238,36 @@ $(document).ready(function () {
 
 
   var scrollAnim;
+
+  if ($(window).height() > 135 && $(window).width() > 12000) {
+    $('.funnels_control-img img').css({
+      'width': "46.5vh"
+    })
+  } else {
+    $('.funnels_control-img img').css({
+      'width': "auto"
+    })
+  }
+
+  if ($(window).height() > 900 && $(window).width() > 1200) {
+    $('#hideBigHeight').hide();
+    $('.funnels_control-item .order-btn').hide();
+    $('.funnels_control-items').prepend('<div id="titleH" class="funnels-title"><span class="blue">Be in control</span> of your Amazon launches! </div>')
+    $('.funnels_control-items').append('<div id="btnH"><div class="title-button">Start building your Funnel!</div><a href="https://eliteseller.com/pricing" class="order-btn funnels-btn">Sign up for free!</a></div>')
+
+    $('.funnels_control-items').css({
+      'min-height': "calc(100% + 95px)"
+    })
+
+  } else {
+    $('#hideBigHeight').show();
+    $('.funnels_control-item .order-btn').show();
+    $('#titleH').remove()
+    $('#btnH').removeClass();
+    $('.funnels_control-items').css({
+      'min-height': "calc(100% - 95px)"
+    })
+  }
 
   if ($(window).width() < 1200) {
     $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
@@ -285,20 +315,79 @@ $(document).ready(function () {
         $('#animateText5').removeClass('hidden_animation')
         $('#animateText5').addClass('visible animated fadeIn').show();
       }
+
+      if (scrollAnim > 1349 && $(window).width() > 1200 && $(window).height() > 900) {
+
+        $('.funnels_control-item .order-btn').show();
+        $('#btnH').hide();
+      }
+
+      if (scrollAnim > 999 && scrollAnim < 1350 && $(window).width() > 1200 && $(window).height() > 900) {
+
+        $('.funnels_control-item .order-btn').hide();
+        $('#btnH').show();
+        $('#titleH').addClass('animate');
+      }
+
+      if (scrollAnim > 1435 && $(window).width() > 1200 && $(window).height() > 900) {
+        $('#titleH').css({
+          'position': 'absolute',
+          'top': $('.funnels_control-items').height() - $('#animateText5').height() - $('#titleH').height() - 40,
+
+        })
+      } else {
+        $('#titleH').css({
+          'position': 'sticky',
+          'top': '80px',
+
+        }).removeClass('animate');
+
+      }
+
+
+
     })
 
   }
 
   $(window).resize(function () {
 
+
+    if ($(window).height() > 1350 && $(window).width() > 1200) {
+      $('.funnels_control-img img').css({
+        'width': "46.5vh"
+      })
+    } else {
+      $('.funnels_control-img img').css({
+        'width': "auto"
+      })
+    }
+
+    if ($(window).height() > 900 && $(window).width() > 1200) {
+      $('#hideBigHeight').hide();
+      $('.funnels_control-item .order-btn').hide();
+      $('.funnels_control-items').prepend('<div id="titleH" class="funnels-title"><span class="blue">Be in control</span> of your Amazon launches! </div>')
+      $('.funnels_control-items').append('<div id="btnH"><div class="title-button">Start building your Funnel!</div><a href="https://eliteseller.com/pricing" class="order-btn funnels-btn">Sign up for free!</a></div>')
+
+      $('.funnels_control-items').css({
+        'min-height': "calc(100% + 95px)"
+      })
+
+    } else {
+      $('#hideBigHeight').show();
+      $('.funnels_control-item .order-btn').show();
+      $('#titleH').remove()
+      $('#btnH').removeClass();
+      $('.funnels_control-items').css({
+        'min-height': "calc(100% - 95px)"
+      })
+    }
+
     if ($(window).width() < 1200) {
       $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
       $('#animateText1').show();
-
       scrollAnim = -1;
     } else {
-      $('.funnels_control-item').hide();
-      $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
       $(window).scroll(function (e) {
 
         var s = $(window).scrollTop(),
@@ -310,36 +399,67 @@ $(document).ready(function () {
 
 
 
-           if (scrollAnim > 0 && scrollAnim < 165 && $(window).width() > 1200) {
-              $('.funnels_control-item').hide();
-              $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-              $('#animateText1').removeClass('hidden_animation')
-              $('#animateText1').addClass('visible animated fadeIn').show();
-            }
-            if (scrollAnim > 164 && scrollAnim < 610 && $(window).width() > 1200) {
-              $('.funnels_control-item').hide();
-              $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-              $('#animateText2').removeClass('hidden_animation')
-              $('#animateText2').addClass('visible animated fadeIn').show();
-            }
-            if (scrollAnim > 610 && scrollAnim < 1000 && $(window).width() > 1200) {
-              $('.funnels_control-item').hide();
-              $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-              $('#animateText3').removeClass('hidden_animation')
-              $('#animateText3').addClass('visible animated fadeIn').show();
-            }
-            if (scrollAnim > 999 && scrollAnim < 1350 && $(window).width() > 1200) {
-              $('.funnels_control-item').hide();
-              $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-              $('#animateText4').removeClass('hidden_animation')
-              $('#animateText4').addClass('visible animated fadeIn').show();
-            }
-            if (scrollAnim > 1349 && $(window).width() > 1200) {
-              $('.funnels_control-item').hide();
-              $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-              $('#animateText5').removeClass('hidden_animation')
-              $('#animateText5').addClass('visible animated fadeIn').show();
-            }
+        if (scrollAnim > 0 && scrollAnim < 165 && $(window).width() > 1200) {
+          $('.funnels_control-item').hide();
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('#animateText1').removeClass('hidden_animation')
+          $('#animateText1').addClass('visible animated fadeIn').show();
+        }
+        if (scrollAnim > 164 && scrollAnim < 610 && $(window).width() > 1200) {
+          $('.funnels_control-item').hide();
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('#animateText2').removeClass('hidden_animation')
+          $('#animateText2').addClass('visible animated fadeIn').show();
+        }
+        if (scrollAnim > 610 && scrollAnim < 1000 && $(window).width() > 1200) {
+          $('.funnels_control-item').hide();
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('#animateText3').removeClass('hidden_animation')
+          $('#animateText3').addClass('visible animated fadeIn').show();
+        }
+        if (scrollAnim > 999 && scrollAnim < 1350 && $(window).width() > 1200) {
+          $('.funnels_control-item').hide();
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('#animateText4').removeClass('hidden_animation')
+          $('#animateText4').addClass('visible animated fadeIn').show();
+        }
+        if (scrollAnim > 1349 && $(window).width() > 1200) {
+          $('.funnels_control-item').hide();
+          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          $('#animateText5').removeClass('hidden_animation')
+          $('#animateText5').addClass('visible animated fadeIn').show();
+        }
+
+        if (scrollAnim > 1349 && $(window).width() > 1200 && $(window).height() > 900) {
+
+          $('.funnels_control-item .order-btn').show();
+          $('#btnH').hide();
+        }
+
+        if (scrollAnim > 999 && scrollAnim < 1350 && $(window).width() > 1200 && $(window).height() > 900) {
+
+          $('.funnels_control-item .order-btn').hide();
+          $('#btnH').show();
+          $('#titleH').addClass('animate');
+        }
+
+        if (scrollAnim > 1435 && $(window).width() > 1200 && $(window).height() > 900) {
+          $('#titleH').css({
+            'position': 'absolute',
+            'top': $('.funnels_control-items').height() - $('#animateText5').height() - $('#titleH').height() - 40,
+
+          })
+        } else {
+          $('#titleH').css({
+            'position': 'sticky',
+            'top': '80px',
+
+          }).removeClass('animate');
+
+        }
+
+
+
       })
 
     }
