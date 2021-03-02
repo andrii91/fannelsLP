@@ -239,7 +239,7 @@ $(document).ready(function () {
 
   var scrollAnim;
 
-  if ($(window).height() > 135 && $(window).width() > 12000) {
+  if ($(window).height() > 1350 && $(window).width() > 1200) {
     $('.funnels_control-img img').css({
       'width': "46.5vh"
     })
@@ -252,6 +252,9 @@ $(document).ready(function () {
   if ($(window).height() > 900 && $(window).width() > 1200) {
     $('#hideBigHeight').hide();
     $('.funnels_control-item .order-btn').hide();
+    $('#titleH').remove()
+    $('#btnH').remove();
+
     $('.funnels_control-items').prepend('<div id="titleH" class="funnels-title"><span class="blue">Be in control</span> of your Amazon launches! </div>')
     $('.funnels_control-items').append('<div id="btnH"><div class="title-button">Start building your Funnel!</div><a href="https://eliteseller.com/pricing" class="order-btn funnels-btn">Sign up for free!</a></div>')
 
@@ -263,7 +266,7 @@ $(document).ready(function () {
     $('#hideBigHeight').show();
     $('.funnels_control-item .order-btn').show();
     $('#titleH').remove()
-    $('#btnH').removeClass();
+    $('#btnH').remove();
     $('.funnels_control-items').css({
       'min-height': "calc(100% - 95px)"
     })
@@ -329,7 +332,7 @@ $(document).ready(function () {
         $('#titleH').addClass('animate');
       }
 
-      if (scrollAnim > 1435 && $(window).width() > 1200 && $(window).height() > 900) {
+      if (scrollAnim > 1600 && $(window).width() > 1200 && $(window).height() > 900) {
         $('#titleH').css({
           'position': 'absolute',
           'top': $('.funnels_control-items').height() - $('#animateText5').height() - $('#titleH').height() - 40,
@@ -366,6 +369,9 @@ $(document).ready(function () {
     if ($(window).height() > 900 && $(window).width() > 1200) {
       $('#hideBigHeight').hide();
       $('.funnels_control-item .order-btn').hide();
+      $('#titleH').remove()
+      $('#btnH').remove();
+
       $('.funnels_control-items').prepend('<div id="titleH" class="funnels-title"><span class="blue">Be in control</span> of your Amazon launches! </div>')
       $('.funnels_control-items').append('<div id="btnH"><div class="title-button">Start building your Funnel!</div><a href="https://eliteseller.com/pricing" class="order-btn funnels-btn">Sign up for free!</a></div>')
 
@@ -377,7 +383,7 @@ $(document).ready(function () {
       $('#hideBigHeight').show();
       $('.funnels_control-item .order-btn').show();
       $('#titleH').remove()
-      $('#btnH').removeClass();
+      $('#btnH').remove();
       $('.funnels_control-items').css({
         'min-height': "calc(100% - 95px)"
       })
