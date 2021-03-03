@@ -235,11 +235,14 @@ $(document).ready(function () {
   ]
   });
 
+  var opacity1, opacity2, opacity3, opacity4, opacity5, opacity6;
+
   var scrollHeight1 = 165;
   var scrollHeight2 = 610;
-  var scrollHeight3 = 1050;
-  var scrollHeight4 = 1400;
-  var scrollCoof = 30;
+  var scrollHeight3 = 1150;
+  var scrollHeight4 = 1500;
+  var scrollCoof = 3.5;
+  var constnt = 500;
 
   var scrollAnim,
     getHeight = $(window).height(),
@@ -250,13 +253,13 @@ $(document).ready(function () {
     getAH4 = $('#animateText4').height(),
     getAH5 = $('#animateText5').height(),
 
-    animationH1 = scrollHeight1 - (getHeight / scrollCoof),
-    animationH2 = scrollHeight2 - (getHeight / scrollCoof),
-    animationH3 = scrollHeight3 - (getHeight / scrollCoof),
-    animationH4 = scrollHeight4 - (getHeight / scrollCoof);
+    animationH1 = scrollHeight1 - ((getHeight - constnt) / scrollCoof),
+    animationH2 = scrollHeight2 - ((getHeight - constnt) / scrollCoof),
+    animationH3 = scrollHeight3 - ((getHeight - constnt) / scrollCoof),
+    animationH4 = scrollHeight4 - ((getHeight - constnt) / scrollCoof);
 
   if (getHeight > 1000 && $(window).width() > 1200) {
-    getHeight = getHeight1;
+    //    getHeight = getHeight1;
   }
 
 
@@ -295,7 +298,7 @@ $(document).ready(function () {
     }*/
 
   if ($(window).width() < 1200) {
-    $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+    $('.funnels_control-item').removeClass('hidden_animation')/*.addClass('visible animated fadeIn')*/
     $('#animateText1').show();
     scrollAnim = -1;
   } else {
@@ -306,50 +309,98 @@ $(document).ready(function () {
 
       scrollAnim = s - topSection;
 
-//      console.log(scrollAnim);
-//      console.log(getHeight);
+      //      console.log(scrollAnim);
+      //      console.log(getHeight);
 
 
 
-      if (scrollAnim > (-(getHeight - getAH1) / 2 + 100) && scrollAnim < animationH1 && $(window).width() > 1200) {
-        $('.funnels_control-item').hide();
-        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-        $('#animateText1').removeClass('hidden_animation')
+      if (scrollAnim > (-(getHeight - getAH1) / 2) && scrollAnim < animationH1 && $(window).width() > 1200) {
+        //        $('.funnels_control-item').hide();
+        //        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        //        $('#animateText1').removeClass('hidden_animation')
+        opacity1 = scrollAnim * 2 / 330;
+
+        $('.funnels_control-item:not(#animateText1)').css('opacity', 0);
+
         $('#animateText1').css({
+          'opacity': 1,
+          'transform': 'matrix(1, 0, 0, 1, 0, 0)',
           'top': (getHeight - getAH1) / 2
-        }).addClass('visible animated fadeIn').show();
+        }) /*.addClass('visible animated fadeIn').show()*/ ;
       }
       if (scrollAnim > (animationH1 - 1) && scrollAnim < animationH2 && $(window).width() > 1200) {
-        $('.funnels_control-item').hide();
-        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-        $('#animateText2').removeClass('hidden_animation')
+        //        $('.funnels_control-item').hide();
+        //        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+        //        $('#animateText2').removeClass('hidden_animation');
+
+        $('.funnels_control-item:not(#animateText2)').css('opacity', 0);
+
+        opacity2 = (scrollAnim - animationH1) * 2 / 480;
+
+        /*$('#animateText1').css({
+            'opacity': (opacity1 - (opacity2 + 0.3)),
+            'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity2 * getHeight + ')',
+            'top': (getHeight - getAH1) / 2
+          });
+*/
+
+
         $('#animateText2').css({
+          'opacity': opacity2,
           'top': (getHeight - getAH2) / 2
-        }).addClass('visible animated fadeIn').show();
+        }) /*.addClass('visible animated fadeIn').show()*/ ;
       }
       if (scrollAnim > (animationH2 - 1) && scrollAnim < animationH3 && $(window).width() > 1200) {
-        $('.funnels_control-item').hide();
+        /*$('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-        $('#animateText3').removeClass('hidden_animation')
+        $('#animateText3').removeClass('hidden_animation')*/
+
+        $('.funnels_control-item:not(#animateText3)').css('opacity', 0);
+
+
+        opacity3 = (scrollAnim - animationH2) * 2 / 330;
+
+        /* $('#animateText2').css({
+          'opacity': (opacity2 - (opacity3 + 1)),
+          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 * getHeight + ')'
+        });
+*/
+
         $('#animateText3').css({
+          'opacity': opacity3,
           'top': (getHeight - getAH3) / 2
-        }).addClass('visible animated fadeIn').show();
+        }) /*.addClass('visible animated fadeIn').show()*/ ;
       }
       if (scrollAnim > (animationH3 - 1) && scrollAnim < animationH4 && $(window).width() > 1200) {
-        $('.funnels_control-item').hide();
-        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-        $('#animateText4').removeClass('hidden_animation')
+        opacity4 = (scrollAnim - animationH3) * 2 / 330;
+
+        /*$('#animateText3').css({
+          'opacity': (opacity3 - (opacity4 + 1)),
+          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity4 *  getHeight + ')'
+        });*/
+
+        $('.funnels_control-item:not(#animateText4)').css('opacity', 0);
         $('#animateText4').css({
+          'opacity': opacity4,
           'top': (getHeight - getAH4) / 2
-        }).addClass('visible animated fadeIn').show();
+        }) /*.addClass('visible animated fadeIn').show()*/ ;
       }
       if (scrollAnim > animationH4 && $(window).width() > 1200) {
-        $('.funnels_control-item').hide();
+        /*$('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-        $('#animateText5').removeClass('hidden_animation')
+        $('#animateText5').removeClass('hidden_animation')*/
+        opacity5 = (scrollAnim - animationH4) * 2 / 330;
+        $('.funnels_control-item:not(#animateText5)').css('opacity', 0);
+        /* $('#animateText4').css({
+           'opacity': (opacity4 - (opacity5 + 1)),
+           'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity5 *  getHeight + ')'
+         });*/
+
+
         $('#animateText5').css({
+          'opacity': opacity5,
           'top': (getHeight - getAH5) / 2
-        }).addClass('visible animated fadeIn').show();
+        }) /*.addClass('visible animated fadeIn').show()*/ ;
       }
       /* 
       if (scrollAnim > 1349 && $(window).width() > 1200 && getHeight > 900) {
@@ -388,9 +439,8 @@ $(document).ready(function () {
 
   $(window).resize(function () {
 
-
     if ($(window).width() < 1200) {
-      $('.funnels_control-item').removeClass('hidden_animation').addClass('visible animated fadeIn')
+      $('.funnels_control-item').removeClass('hidden_animation')/*.addClass('visible animated fadeIn')*/
       $('#animateText1').show();
       scrollAnim = -1;
     } else {
@@ -401,50 +451,98 @@ $(document).ready(function () {
 
         scrollAnim = s - topSection;
 
-//        console.log(scrollAnim);
-//        console.log(getHeight);
+        //      console.log(scrollAnim);
+        //      console.log(getHeight);
 
 
 
-        if (scrollAnim > (-(getHeight - getAH1 - 100) / 2) && scrollAnim < animationH1 && $(window).width() > 1200) {
-          $('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('#animateText1').removeClass('hidden_animation')
+        if (scrollAnim > (-(getHeight - getAH1) / 2) && scrollAnim < animationH1 && $(window).width() > 1200) {
+          //        $('.funnels_control-item').hide();
+          //        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          //        $('#animateText1').removeClass('hidden_animation')
+          opacity1 = scrollAnim * 2 / 330;
+
+          $('.funnels_control-item:not(#animateText1)').css('opacity', 0);
+
           $('#animateText1').css({
+            'opacity': 1,
+            'transform': 'matrix(1, 0, 0, 1, 0, 0)',
             'top': (getHeight - getAH1) / 2
-          }).addClass('visible animated fadeIn').show();
+          }) /*.addClass('visible animated fadeIn').show()*/ ;
         }
         if (scrollAnim > (animationH1 - 1) && scrollAnim < animationH2 && $(window).width() > 1200) {
-          $('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('#animateText2').removeClass('hidden_animation')
+          //        $('.funnels_control-item').hide();
+          //        $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
+          //        $('#animateText2').removeClass('hidden_animation');
+
+          $('.funnels_control-item:not(#animateText2)').css('opacity', 0);
+
+          opacity2 = (scrollAnim - animationH1) * 2 / 480;
+
+          /*$('#animateText1').css({
+            'opacity': (opacity1 - (opacity2 + 0.3)),
+            'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity2 * getHeight + ')',
+            'top': (getHeight - getAH1) / 2
+          });
+*/
+
+
           $('#animateText2').css({
+            'opacity': opacity2,
             'top': (getHeight - getAH2) / 2
-          }).addClass('visible animated fadeIn').show();
+          }) /*.addClass('visible animated fadeIn').show()*/ ;
         }
         if (scrollAnim > (animationH2 - 1) && scrollAnim < animationH3 && $(window).width() > 1200) {
-          $('.funnels_control-item').hide();
+          /*$('.funnels_control-item').hide();
           $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('#animateText3').removeClass('hidden_animation')
+          $('#animateText3').removeClass('hidden_animation')*/
+
+          $('.funnels_control-item:not(#animateText3)').css('opacity', 0);
+
+
+          opacity3 = (scrollAnim - animationH2) * 2 / 330;
+
+          /* $('#animateText2').css({
+          'opacity': (opacity2 - (opacity3 + 1)),
+          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 * getHeight + ')'
+        });
+*/
+
           $('#animateText3').css({
+            'opacity': opacity3,
             'top': (getHeight - getAH3) / 2
-          }).addClass('visible animated fadeIn').show();
+          }) /*.addClass('visible animated fadeIn').show()*/ ;
         }
         if (scrollAnim > (animationH3 - 1) && scrollAnim < animationH4 && $(window).width() > 1200) {
-          $('.funnels_control-item').hide();
-          $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('#animateText4').removeClass('hidden_animation')
+          opacity4 = (scrollAnim - animationH3) * 2 / 330;
+
+          /*$('#animateText3').css({
+            'opacity': (opacity3 - (opacity4 + 1)),
+            'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity4 *  getHeight + ')'
+          });*/
+
+          $('.funnels_control-item:not(#animateText4)').css('opacity', 0);
           $('#animateText4').css({
+            'opacity': opacity4,
             'top': (getHeight - getAH4) / 2
-          }).addClass('visible animated fadeIn').show();
+          }) /*.addClass('visible animated fadeIn').show()*/ ;
         }
         if (scrollAnim > animationH4 && $(window).width() > 1200) {
-          $('.funnels_control-item').hide();
+          /*$('.funnels_control-item').hide();
           $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
-          $('#animateText5').removeClass('hidden_animation')
+          $('#animateText5').removeClass('hidden_animation')*/
+          opacity5 = (scrollAnim - animationH4) * 2 / 330;
+          $('.funnels_control-item:not(#animateText5)').css('opacity', 0);
+          /* $('#animateText4').css({
+             'opacity': (opacity4 - (opacity5 + 1)),
+             'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity5 *  getHeight + ')'
+           });*/
+
+
           $('#animateText5').css({
+            'opacity': opacity5,
             'top': (getHeight - getAH5) / 2
-          }).addClass('visible animated fadeIn').show();
+          }) /*.addClass('visible animated fadeIn').show()*/ ;
         }
         /* 
       if (scrollAnim > 1349 && $(window).width() > 1200 && getHeight > 900) {
@@ -480,6 +578,7 @@ $(document).ready(function () {
       })
 
     }
+
   })
 
 

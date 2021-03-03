@@ -247,15 +247,16 @@
   position: sticky;
   position: -webkit-sticky;
 //  top: 40%;
-  display: none;
+//  display: none;
+  opacity: 0;
 -webkit-transform: translate3d(0, 0, 0) translateZ(0);
     transform: translate3d(0, 0, 0) translateZ(0);
 
   will-change: transform, opacity;
- /* &#animateText1 {
-    display: block;
-  }*/
-
+  &#animateText1 {
+    opacity: 1;
+  }
+  transition: .3s;
   .title {
     font-family: Helvetica Now Display;
     font-style: normal;
@@ -777,13 +778,13 @@
 //  height: 100%;
   min-height: calc(100% + 90px);
   position: relative;
-  .funnels-title {
+  /*.funnels-title {
     position: sticky;
     top: 80px;
     background: #fff;
     z-index: 9;
     margin-bottom: 40px;
-  }
+  }*/
 }
 
 html {
