@@ -311,7 +311,7 @@ $(document).ready(function () {
 
 
 
-      if (scrollAnim > (-(getHeight - getAH1) / 2) && scrollAnim < animationH1 && $(window).width() > 1200) {
+      if (scrollAnim > (-(getHeight - getAH1) / 2 + 100) && scrollAnim < animationH1 && $(window).width() > 1200) {
         $('.funnels_control-item').hide();
         $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
         $('#animateText1').removeClass('hidden_animation')
@@ -406,7 +406,7 @@ $(document).ready(function () {
 
 
 
-        if (scrollAnim > (-(getHeight - getAH1) / 2) && scrollAnim < animationH1 && $(window).width() > 1200) {
+        if (scrollAnim > (-(getHeight - getAH1 - 100) / 2) && scrollAnim < animationH1 && $(window).width() > 1200) {
           $('.funnels_control-item').hide();
           $('.funnels_control-item').removeClass('visible animated fadeIn').addClass('hidden_animation')
           $('#animateText1').removeClass('hidden_animation')
