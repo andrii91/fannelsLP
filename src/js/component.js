@@ -318,7 +318,7 @@ $(document).ready(function () {
         opacity3 = (scrollAnim - animationH2) * 2 / 480;
 
         $('#animateText2').css({
-          'opacity': (opacity2 - (opacity3 + 1.7)),
+          'opacity': (opacity2 - (opacity3 + 1.8)),
           //          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 * getHeight + ')'
         });
       }
@@ -337,7 +337,7 @@ $(document).ready(function () {
         opacity4 = (scrollAnim - animationH3) * 2 / 480;
 
         $('#animateText3').css({
-          'opacity': (opacity3 - (opacity4 +  2.1)),
+          'opacity': (opacity3 - (opacity4 +  2.2)),
           //          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity4 *  getHeight + ')'
         });
       }
