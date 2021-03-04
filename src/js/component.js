@@ -307,7 +307,7 @@ $(document).ready(function () {
 
 
       if (scrollAnim > (animationH1 - 1) && scrollAnim < animationH2 && $(window).width() > 1200) {
-
+        $('.funnels_control-item:not(#animateText1, #animateText2)').css('opacity', 0);
         $('#animateText2').css({
           'opacity': opacity2,
           'top': (getHeight - getAH2) / 2
@@ -325,7 +325,7 @@ $(document).ready(function () {
 
 
       if (scrollAnim > (animationH2 - 1) && scrollAnim < animationH3 && $(window).width() > 1200) {
-        //        $('.funnels_control-item:not(#animateText3)').css('opacity', 0);
+         $('.funnels_control-item:not(#animateText2, #animateText3)').css('opacity', 0);
 
         $('#animateText3').css({
           'opacity': opacity3,
@@ -343,7 +343,7 @@ $(document).ready(function () {
       }
 
       if (scrollAnim > (animationH3 - 1) && scrollAnim < animationH4 && $(window).width() > 1200) {
-        //        $('.funnels_control-item:not(#animateText4)').css('opacity', 0);
+        $('.funnels_control-item:not(#animateText3, #animateText4)').css('opacity', 0);
         $('#animateText4').css({
           'opacity': opacity4,
           'top': (getHeight - getAH4) / 2
@@ -351,7 +351,6 @@ $(document).ready(function () {
       }
       if (scrollAnim > (animationH4 - 25) && $(window).width() > 1200) {
         opacity5 = (scrollAnim - animationH4) * 2 / 480;
-        //        $('.funnels_control-item:not(#animateText5)').css('opacity', 0);
         $('#animateText4').css({
           'opacity': (opacity4 - (opacity5 + 2.1)),
           //           'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity5 *  getHeight + ')'
@@ -361,6 +360,7 @@ $(document).ready(function () {
 
       if (scrollAnim > animationH4 && $(window).width() > 1200) {
 
+        $('.funnels_control-item:not(#animateText4, #animateText5)').css('opacity', 0);
         $('#animateText5').css({
           'opacity': opacity5,
           'top': (getHeight - getAH5) / 2
