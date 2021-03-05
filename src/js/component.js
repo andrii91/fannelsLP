@@ -495,7 +495,7 @@ $(document).ready(function () {
     arrows: false,
     dots: false,
     infinite: true,
-    speed: 800,
+    speed: 300,
     fade: true,
     cssEase: 'false',
     autoplay: true,
