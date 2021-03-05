@@ -491,9 +491,9 @@ $(document).ready(function () {
     infinite: true,
     speed: 800,
     fade: true,
-    cssEase: 'linear',
+    cssEase: 'false',
     autoplay: true,
-    autoplaySpeed: 1300,
+    autoplaySpeed: 900,
 
   });
 
