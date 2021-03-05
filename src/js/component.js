@@ -499,7 +499,7 @@ $(document).ready(function () {
     fade: true,
     cssEase: 'false',
     autoplay: true,
-    autoplaySpeed: 900,
+    autoplaySpeed: 720,
 
   });
 
