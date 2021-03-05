@@ -244,8 +244,8 @@ $(document).ready(function () {
   var scrollCoof = 3.5;
   var constnt = 500;
 
-  var scrollAnim,
-    getHeight = $(window).height(),
+  var scrollAnim, directionScroll
+  getHeight = $(window).height(),
     getHeight1 = 1000,
     getAH1 = $('#animateText1').height(),
     getAH2 = $('#animateText2').height(),
@@ -263,6 +263,27 @@ $(document).ready(function () {
   }
 
 
+  //IE, Opera, Safari
+  $('.funnels_control').bind('mousewheel', function (e) {
+    if (e.originalEvent.wheelDelta < 0) {
+      directionScroll = 'down';
+    } else {
+      directionScroll = 'up';
+    }
+    //prevent page fom scrolling
+    //     return false;
+  });
+
+
+  //Firefox
+  $('.funnels_control').bind('DOMMouseScroll', function (e) {
+    if (e.originalEvent.detail > 0) {
+      directionScroll = 'down';
+    } else {
+      directionScroll = 'up';
+    }
+
+  });
 
   if ($(window).width() < 1200) {
     $('.funnels_control-item').removeClass('hidden_animation') /*.addClass('visible animated fadeIn')*/
@@ -275,9 +296,14 @@ $(document).ready(function () {
         topSection = $('.funnels_control').offset().top;
 
       scrollAnim = s - topSection;
-
       //      console.log(scrollAnim);
       //      console.log(getHeight);
+      opacity2 = (scrollAnim - animationH1) * 2 / 480;
+      opacity3 = (scrollAnim - animationH2) * 2 / 480;
+      opacity4 = (scrollAnim - animationH3) * 2 / 480;
+      opacity5 = (scrollAnim - animationH4) * 2 / 480;
+
+
 
 
 
@@ -295,7 +321,7 @@ $(document).ready(function () {
       }
 
       if (scrollAnim > (animationH1 - 25) && scrollAnim < animationH2 && $(window).width() > 1200) {
-        opacity2 = (scrollAnim - animationH1) * 2 / 480;
+
 
         $('#animateText1').css({
           'opacity': (opacity1 - (opacity2 + 1.3)),
@@ -308,63 +334,149 @@ $(document).ready(function () {
 
       if (scrollAnim > (animationH1 - 1) && scrollAnim < animationH2 && $(window).width() > 1200) {
         $('.funnels_control-item:not(#animateText1, #animateText2)').css('opacity', 0);
-        $('#animateText2').css({
-          'opacity': opacity2,
-          'top': (getHeight - getAH2) / 2
-        });
+
+        if (directionScroll == "down") {
+          $('#animateText2').css({
+            'opacity': opacity2,
+            'top': (getHeight - getAH2) / 2
+          });
+
+        } else {
+          $('#animateText2').css({
+            'opacity': (-1 * opacity2 - (opacity3 - 3)),
+            //          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 * getHeight + ')'
+          });
+        }
+
       }
 
       if (scrollAnim > (animationH2 - 25) && scrollAnim < animationH3 && $(window).width() > 1200) {
-        opacity3 = (scrollAnim - animationH2) * 2 / 480;
 
-        $('#animateText2').css({
-          'opacity': (opacity2 - (opacity3 + 1.8)),
-          //          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 * getHeight + ')'
-        });
+        if (directionScroll == "down") {
+          $('#animateText2').css({
+            'opacity': (opacity2 - (opacity3 + 2)),
+            //          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 * getHeight + ')'
+          });
+
+        } else {
+          $('#animateText2').css({
+            'opacity': (-1 * opacity2 - (opacity3 - 3)),
+            //          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 * getHeight + ')'
+          });
+        }
+
       }
 
 
       if (scrollAnim > (animationH2 - 1) && scrollAnim < animationH3 && $(window).width() > 1200) {
         $('.funnels_control-item:not(#animateText2, #animateText3)').css('opacity', 0);
 
-        $('#animateText3').css({
-          'opacity': opacity3,
-          'top': (getHeight - getAH3) / 2
-        });
+
+
+        if (directionScroll == "down") {
+          $('#animateText3').css({
+            'opacity': opacity3,
+            'top': (getHeight - getAH3) / 2
+          });
+
+        } else {
+          $('#animateText3').css({
+            'opacity': opacity3 - 0.7,
+            'top': (getHeight - getAH3) / 2
+          });
+        }
+
+
+
       }
 
       if (scrollAnim > (animationH3 - 25) && scrollAnim < animationH4 && $(window).width() > 1200) {
-        opacity4 = (scrollAnim - animationH3) * 2 / 480;
 
-        $('#animateText3').css({
-          'opacity': (opacity3 - (opacity4 + 2.2)),
-          //          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity4 *  getHeight + ')'
-        });
+
+
+
+        if (directionScroll == "down") {
+
+          $('#animateText3').css({
+            'opacity': (opacity3 - (opacity4 + 2.5)),
+            //          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity4 *  getHeight + ')'
+          });
+
+        } else {
+          $('#animateText3').css({
+            'opacity': (-1 * opacity3 - (opacity4 - 3.3)),
+            //          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 * getHeight + ')'
+          });
+        }
+
+
+
       }
 
       if (scrollAnim > (animationH3 - 1) && scrollAnim < animationH4 && $(window).width() > 1200) {
         $('.funnels_control-item:not(#animateText3, #animateText4)').css('opacity', 0);
-        $('#animateText4').css({
-          'opacity': opacity4,
-          'top': (getHeight - getAH4) / 2
-        });
+
+
+        if (directionScroll == "down") {
+
+          $('#animateText4').css({
+            'opacity': opacity4,
+            'top': (getHeight - getAH4) / 2
+          });
+
+        } else {
+          $('#animateText4').css({
+            'opacity': opacity4 - 0.4,
+            'top': (getHeight - getAH4) / 2
+          });
+        }
+
+
+
       }
       if (scrollAnim > (animationH4 - 25) && $(window).width() > 1200) {
-        opacity5 = (scrollAnim - animationH4) * 2 / 480;
-        $('#animateText4').css({
-          'opacity': (opacity4 - (opacity5 + 2.1)),
-          //           'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity5 *  getHeight + ')'
-        });
+
+
+        if (directionScroll == "down") {
+
+          $('#animateText4').css({
+            'opacity': (opacity4 - (opacity5 + 2.1)),
+            //           'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity5 *  getHeight + ')'
+          });
+        } else {
+          $('#animateText4').css({
+            'opacity': (-1 * opacity4 - (opacity5 - 2.3)),
+            //          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 * getHeight + ')'
+          });
+        }
+
+
+
 
       }
 
       if (scrollAnim > animationH4 && $(window).width() > 1200) {
 
         $('.funnels_control-item:not(#animateText4, #animateText5)').css('opacity', 0);
-        $('#animateText5').css({
-          'opacity': opacity5,
-          'top': (getHeight - getAH5) / 2
-        });
+
+
+        if (directionScroll == "down") {
+
+          $('#animateText5').css({
+            'opacity': opacity5,
+            'top': (getHeight - getAH5) / 2
+          });
+
+        } else {
+          $('#animateText5').css({
+            'opacity': opacity5 - 0.4,
+            'top': (getHeight - getAH5) / 2
+          });
+        }
+
+
+
+
       }
 
 
@@ -375,113 +487,6 @@ $(document).ready(function () {
   $(window).resize(function () {
 
 
-    if ($(window).width() < 1200) {
-      $('.funnels_control-item').removeClass('hidden_animation') /*.addClass('visible animated fadeIn')*/
-      $('#animateText1').show();
-      scrollAnim = -1;
-    } else {
-      $(window).scroll(function (e) {
-
-        var s = $(window).scrollTop(),
-          topSection = $('.funnels_control').offset().top;
-
-        scrollAnim = s - topSection;
-
-        //      console.log(scrollAnim);
-        //      console.log(getHeight);
-
-
-
-        if (scrollAnim > (-(getHeight - getAH1) / 2) && scrollAnim < animationH1 && $(window).width() > 1200) {
-
-          opacity1 = (scrollAnim / 100) * -1;
-
-          $('.funnels_control-item:not(#animateText1)').css('opacity', 0);
-
-          $('#animateText1').css({
-            'opacity': opacity1,
-            //          'transform': 'matrix(1, 0, 0, 1, 0, 0)',
-            'top': (getHeight - getAH1) / 2
-          });
-        }
-
-        if (scrollAnim > (animationH1 - 25) && scrollAnim < animationH2 && $(window).width() > 1200) {
-          opacity2 = (scrollAnim - animationH1) * 2 / 480;
-
-          $('#animateText1').css({
-            'opacity': (opacity1 - (opacity2 + 1.3)),
-            //            'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity2 * getHeight + ')',
-            'top': (getHeight - getAH1) / 2
-          });
-
-        }
-
-
-        if (scrollAnim > (animationH1 - 1) && scrollAnim < animationH2 && $(window).width() > 1200) {
-          $('.funnels_control-item:not(#animateText1, #animateText2)').css('opacity', 0);
-          $('#animateText2').css({
-            'opacity': opacity2,
-            'top': (getHeight - getAH2) / 2
-          });
-        }
-
-        if (scrollAnim > (animationH2 - 25) && scrollAnim < animationH3 && $(window).width() > 1200) {
-          opacity3 = (scrollAnim - animationH2) * 2 / 480;
-
-          $('#animateText2').css({
-            'opacity': (opacity2 - (opacity3 + 1.8)),
-            //          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 * getHeight + ')'
-          });
-        }
-
-
-        if (scrollAnim > (animationH2 - 1) && scrollAnim < animationH3 && $(window).width() > 1200) {
-          $('.funnels_control-item:not(#animateText2, #animateText3)').css('opacity', 0);
-
-          $('#animateText3').css({
-            'opacity': opacity3,
-            'top': (getHeight - getAH3) / 2
-          });
-        }
-
-        if (scrollAnim > (animationH3 - 25) && scrollAnim < animationH4 && $(window).width() > 1200) {
-          opacity4 = (scrollAnim - animationH3) * 2 / 480;
-
-          $('#animateText3').css({
-            'opacity': (opacity3 - (opacity4 + 2.2)),
-            //          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity4 *  getHeight + ')'
-          });
-        }
-
-        if (scrollAnim > (animationH3 - 1) && scrollAnim < animationH4 && $(window).width() > 1200) {
-          $('.funnels_control-item:not(#animateText3, #animateText4)').css('opacity', 0);
-          $('#animateText4').css({
-            'opacity': opacity4,
-            'top': (getHeight - getAH4) / 2
-          });
-        }
-        if (scrollAnim > (animationH4 - 25) && $(window).width() > 1200) {
-          opacity5 = (scrollAnim - animationH4) * 2 / 480;
-          $('#animateText4').css({
-            'opacity': (opacity4 - (opacity5 + 2.1)),
-            //           'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity5 *  getHeight + ')'
-          });
-
-        }
-
-        if (scrollAnim > animationH4 && $(window).width() > 1200) {
-
-          $('.funnels_control-item:not(#animateText4, #animateText5)').css('opacity', 0);
-          $('#animateText5').css({
-            'opacity': opacity5,
-            'top': (getHeight - getAH5) / 2
-          });
-        }
-
-
-      })
-
-    }
   })
 
 
