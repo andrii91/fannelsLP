@@ -340,7 +340,7 @@
           content: "";
           width: 140px;
           height: 4px;
-           background: url('../img/funnels/line1.svg') no-repeat center;
+          background: url('../img/funnels/line1.svg') no-repeat center;
           border: none;
           position: absolute;
           top: 50%;
@@ -382,7 +382,7 @@
             content: "";
             width: 140px;
             height: 4px;
-             background: url('../img/funnels/line2.svg') no-repeat center;
+            background: url('../img/funnels/line2.svg') no-repeat center;
             border: none;
             position: absolute;
             top: 50%;
@@ -507,15 +507,17 @@
     color: #19153E !important;
 
   }
-  &.funnels-tmpl #menu li a.pricing-btn, &.funnels-tmpl .menu#menu li a.pricing-btn {
+
+  &.funnels-tmpl #menu li a.pricing-btn,
+  &.funnels-tmpl .menu#menu li a.pricing-btn {
     color: #ffffff !important;
-    
+
   }
 
   .nav .expand__content {
     min-height: 365px;
   }
-  
+
   .funnels_head .container:before {
     width: 1000px;
     height: 688px;
@@ -524,8 +526,20 @@
     right: -5px;
     z-index: 0;
     left: inherit;
-}
+  }
+
   #stopfix {
-      position: static !important;
+    position: static !important;
+  }
+
+
+
+  .funnels_head-title {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 17px;
+    max-width: 485px;
+    margin-top: 39px;
+    margin-left: 94px;
   }
 }

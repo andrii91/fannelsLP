@@ -219,10 +219,9 @@
     &:before {
       right: inherit;
       left: 40px;
-      top: 56px;
-      height: 825px;
-      height: 825px;
-      background-position: 75% 50%;
+          top: 136px;
+      height: 616px;
+      background-position: 78% 52%;
 
     }
   }
@@ -230,12 +229,13 @@
 
 .funnels_head-item {
   margin-top: 0;
-  padding: 130px 40px 30px;
+  padding: 135px 40px 30px;
+  margin-bottom: 40px;
 
   h1 {
-    font-size: 50px;
-    line-height: 57px;
-    margin-bottom: 30px;
+    font-size: 40px;
+    line-height: 46px;
+    margin-bottom: 15px;
   }
 
   .funnels_head-content {
@@ -260,13 +260,18 @@
       margin-left: 0;
     }
   }
+  .order-btn {
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .funnels_head-title {
-  margin-top: 30px;
-  margin-left: 65px;
-  font-size: 36px;
-  line-height: 47px;
+  margin-top: 0;
+  margin-left: 0;
+font-size: 26px;
+line-height: 39px;
   margin-bottom: 30px;
 }
 
@@ -292,14 +297,14 @@
 
 &.funnels-tmpl {
   .nav {
-    padding: 38px 0;
+    padding: 30px 0;
     //    z-index: 0;
-    transition: .3s;
+    transition: 0s;
   }
 
   .nav.fixed {
     //     z-index: 50;
-    padding: 6px 0 10px;
+    padding: 30px 0;
   }
 }
 
