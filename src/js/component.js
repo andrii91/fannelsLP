@@ -344,6 +344,7 @@ $(document).ready(function () {
         } else {
           $('#animateText2').css({
             'opacity': (-1 * opacity2 - (opacity3 - 3)),
+            'top': (getHeight - getAH2) / 2
             //          'transform': 'matrix(1, 0, 0, 1, 0, -' +opacity3 * getHeight + ')'
           });
         }
