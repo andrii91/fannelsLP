@@ -594,7 +594,7 @@
 
 .funnels_testimonials-slider {
   position: relative;
-
+padding-bottom: 90px;
   &:before {
     content: "";
     background: url('../img/funnels/unionbg.svg') no-repeat center;
@@ -608,6 +608,22 @@
     z-index: -1;
   }
 
+  .slick-arrow {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    transition: .3s;
+    z-index: 99;
+    &:hover {
+      opacity: .2;
+    }
+    &.prev {
+      left: calc(50% - 50px);
+    }
+    &.next {
+      right: calc(50% - 50px);
+    }
+  }
 }
 
 .funnels_testimonials-item {
@@ -623,7 +639,9 @@
   padding: 45px 25px 45px 35px;
   margin-top: 20px;
   margin-bottom: 20px;
-
+  display: block !important;
+  margin-left: auto;
+  margin-right: auto;
   p {
     padding-left: 45px;
     position: relative;

@@ -214,12 +214,14 @@ $(document).ready(function () {
 
   $('.funnels_testimonials-slider').slick({
     infinite: true,
-    arrows: false,
+    arrows: true,
     dots: false,
     autoplay: false,
     speed: 800,
     slidesToShow: 3,
     slidesToScroll: 1,
+    prevArrow: '<svg class="prev" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle  cx="20" cy="20" r="19.5" transform="rotate(180 20 20)" fill="white" stroke="#505876"/><path  d="M9.47211 19.4697C9.17922 19.7626 9.17922 20.2374 9.47211 20.5303L14.2451 25.3033C14.538 25.5962 15.0128 25.5962 15.3057 25.3033C15.5986 25.0104 15.5986 24.5355 15.3057 24.2426L11.0631 20L15.3057 15.7574C15.5986 15.4645 15.5986 14.9896 15.3057 14.6967C15.0128 14.4038 14.538 14.4038 14.2451 14.6967L9.47211 19.4697ZM30.0024 19.25L10.0024 19.25L10.0024 20.75L30.0024 20.75L30.0024 19.25Z" fill="#505876"/></svg>',
+    nextArrow: '<svg class="next" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="19.5" fill="white" stroke="#505876"/><path d="M30.5303 20.5303C30.8232 20.2374 30.8232 19.7626 30.5303 19.4697L25.7574 14.6967C25.4645 14.4038 24.9896 14.4038 24.6967 14.6967C24.4038 14.9896 24.4038 15.4645 24.6967 15.7574L28.9393 20L24.6967 24.2426C24.4038 24.5355 24.4038 25.0104 24.6967 25.3033C24.9896 25.5962 25.4645 25.5962 25.7574 25.3033L30.5303 20.5303ZM10 20.75H30V19.25H10V20.75Z"fill="#505876"/></svg>',
     responsive: [
 
       {
