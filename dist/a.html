@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <!--Обязательно вот такой метатег, это костыль так как дизайн прорисован под минимаьный экран 365рх, меньше экраны будут просто пропорционально уменьшаться -->
+  <meta name="Title" content="Amazon funnels" />
+  <meta name="description" content="" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:sitename" content="" />
+  <meta property="og:title" content="Amazon funnels">
+  <meta property="og:image" content="" />
+  <title>Amazon funnels</title>
+  <link type="text/css" rel="stylesheet" href="css/app.css" />
+  <link rel="shortcut icon" href="img/manychat/favicon.ico">
+</head>
+
+<body class="home funnels-tmpl">
+
+
+  <main>
+
+
+    <div class="funnels_control">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-xl-6 col-lg-6 ml-auto">
+            <div class="funnels_control-img_animation">
+             <div id="smile_blue" data-top="0" data-left="185">
+              <img  src="img/smile_blue.svg" alt="">
+             </div>
+              <img src="img/bggg.svg" alt="">
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+
+
+  <!--  <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>-->
+  <script src="js/vendor.js"></script>
+  <script src="jsa/tween.umd.js"></script>
+  <script src="jsa/RequestAnimationFrame.js"></script>
+  <script>
+    $(document).ready(function() {
+    	window.onload = function () {
+				init()
+				animate()
+			}
+
+      function init() {
+        var target1 = document.getElementById('smile_blue'),
+          tween1 = new TWEEN.Tween(target1.dataset)
+          .to({
+            top: '+636',
+            left: '185'
+          }, 5000)
+//          .repeat(5)
+          .delay(5000)
+          .easing(TWEEN.Easing.Quadratic.Out)
+          .onUpdate(function(object) {
+            object.top = Math.round(object.top)
+            object.left = Math.round(object.left)
+            updateBox(target1, object)
+          })
+          .start()
+
+        updateBox(target1, target1.dataset)
+      }
+
+      function animate(time) {
+        requestAnimationFrame(animate)
+        TWEEN.update(time)
+      }
+
+      function updateBox(box, params) {
+        var s = box.style
+        var transform = 'translate(' + params.left + 'px, ' + params.top + 'px)'
+        s.transform = transform
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -213,7 +213,7 @@ $(document).ready(function () {
     });*/
 
   $('.funnels_testimonials-slider').slick({
-    infinite: true,
+    infinite: false,
     arrows: true,
     dots: false,
     autoplay: false,
