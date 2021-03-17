@@ -582,9 +582,12 @@
 .funnels_testimonials {
   padding: 90px 0 220px;
   overflow: hidden;
-
+  .container {
+    padding: 0 !important;
+     max-width: 1180px;
+  }
   .funnels-title {
-    margin-bottom: 90px;
+    margin-bottom: 20px;
   }
 }
 
@@ -594,7 +597,8 @@
 
 .funnels_testimonials-slider {
   position: relative;
-padding-bottom: 90px;
+padding-bottom: 60px;
+  text-align: center;
   &:before {
     content: "";
     background: url('../img/funnels/unionbg.svg') no-repeat center;
@@ -602,7 +606,7 @@ padding-bottom: 90px;
     width: 1440px;
     height: 606px;
     position: absolute;
-    top: -70px;
+    top: 40px;
     left: 50%;
     transform: translate(-50%, 0%);
     z-index: -1;
@@ -629,29 +633,27 @@ padding-bottom: 90px;
 .funnels_testimonials-item {
   position: relative;
   z-index: 3;
-  max-width: 375px;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #FFFFFF;
-  background-blend-mode: normal, soft-light;
-  border: 2px solid #FFFFFF;
-  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(10px);
+      max-width: 375px;
+    margin: 20px 10px;
+  padding: 45px 35px;
+ text-align: left;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+
+    background-color: rgba(255,255,255,.9);
+    background-blend-mode: overlay;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
   border-radius: 4px;
-  padding: 45px 25px 45px 35px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: block !important;
-  margin-left: auto;
-  margin-right: auto;
   p {
     padding-left: 45px;
     position: relative;
     margin-bottom: 30px;
     font-family: Helvetica Now Display;
     font-style: italic;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 26px;
-    color: #19153E;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #142948;
     background: url(../img/funnels/bl.svg) no-repeat left top;
 
   }
@@ -659,6 +661,7 @@ padding-bottom: 90px;
   .funnels_testimonials-author {
     display: flex;
     padding-left: 45px;
+    align-items: center;
 
     .img {
       margin-right: 20px;
@@ -673,7 +676,6 @@ padding-bottom: 90px;
 
     .content {
       max-width: calc(100% - 100px);
-
       .name {
         font-family: Helvetica Now Display;
         font-style: normal;
@@ -681,7 +683,7 @@ padding-bottom: 90px;
         font-size: 16px;
         line-height: 24px;
         letter-spacing: -0.01em;
-        color: #19153E;
+        color: #505876;
         margin-bottom: 2px;
       }
 
@@ -1420,7 +1422,7 @@ $vw-viewport: 1700;
     padding: vw(90px) 0 vw(220px);
 
     .funnels-title {
-      margin-bottom: vw(90px);
+      margin-bottom: vw(20px);
     }
   }
 
@@ -1434,7 +1436,7 @@ $vw-viewport: 1700;
 
   }
 
-  .funnels_testimonials-item {
+/*  .funnels_testimonials-item {
     max-width: vw(375px);
     padding: vw(45px) vw(25px) vw(45px) vw(35px);
     margin-top: vw(20px);
@@ -1476,7 +1478,7 @@ $vw-viewport: 1700;
         }
       }
     }
-  }
+  }*/
 
   .funnels_features {
     padding: vw(130px) 0 vw(110px);

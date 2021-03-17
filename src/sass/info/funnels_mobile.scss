@@ -149,6 +149,8 @@
 
   .container {
     max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .slick-dots {
@@ -172,9 +174,10 @@
 
 .funnels_testimonials-item {
   box-shadow: 0 4px 3px rgba(0, 0, 0, .15);
-  display: block !important;
+//  display: block !important;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 .funnels_features {
