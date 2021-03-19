@@ -19,10 +19,13 @@ $(document).ready(function () {
 
   $(window).resize(function () {
     console.log($(this).width());
-    if ($(this).width() > 987) {
+    if ($(this).width() > 991) {
       $('#menu').css({
         'display': 'flex'
       })
+        $('.nav').removeClass('open');
+        $('body *').removeClass('blur');
+      
       $('#nav-icon').css({
         'display': 'none !important'
       })
@@ -40,7 +43,8 @@ $(document).ready(function () {
         $('#menu').css({
           'display': 'block'
         })
-        $('.home').addClass('overflow-hidden')
+        $('.home').addClass('overflow-hidden');
+        $('header, main,footer').addClass('blur');
       }
     }
   })
@@ -236,7 +240,6 @@ $(document).ready(function () {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: true,
-          adaptiveHeight: true,
           variableWidth: false,
           swipe: true,
           arrows: false
@@ -254,7 +257,7 @@ $(document).ready(function () {
   var scrollCoof = 3.5;
   var constnt = 500;
 
-  var scrollAnim, directionScroll
+  var scrollAnim, directionScroll,
   getHeight = $(window).height(),
     getHeight1 = 1000,
     getAH1 = $('#animateText1').height(),

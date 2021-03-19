@@ -1,7 +1,8 @@
 & {
-main {
-  overflow: hidden;
-}
+  main {
+    overflow: hidden;
+  }
+
   .xs-1 {
     -ms-flex-order: 1;
     order: 1;
@@ -90,13 +91,15 @@ main {
   .logo {
     display: inline-block;
 
-    svg, img {
+    svg,
+    img {
       width: 160px;
     }
   }
 
   .nav {
     padding-top: 48px;
+
     .container {
       padding-left: 40px !important;
       padding-right: 40px !important;
@@ -146,7 +149,8 @@ main {
     .logo {
       margin-bottom: 30px;
 
-      svg, img {
+      svg,
+      img {
         width: 175px;
       }
     }
@@ -265,7 +269,9 @@ main {
     z-index: 99999;
     background: #fff;
     border-radius: 0 0 4px 4px;
-
+    max-width: inherit;
+/*    max-height: calc(100vh - 55px);
+    overflow-y: auto;*/
     li {
       margin: 0;
       text-align: left;
@@ -291,6 +297,7 @@ main {
           color: #19153E;
           background: 0 0;
           font-weight: normal;
+
           &:before {
             display: block;
           }
@@ -374,17 +381,19 @@ main {
   }
 
   .progressBarContainer {
-//    display: none;
+    //    display: none;
   }
-.progressBarContainer div h3 {
-  font-size: 16px;
-  line-height: 24px;
+
+  .progressBarContainer div h3 {
+    font-size: 16px;
+    line-height: 24px;
     margin-bottom: 2px;
-}
+  }
 
   .progressBarContainer div {
     margin-right: 30px;
   }
+
   .header-animation .title {
     font-size: 22px;
     line-height: 32px;
@@ -785,6 +794,7 @@ main {
       display: none;
     }
   }
+
   .questions-btn {
     margin-left: 0;
     margin-top: 20px;
@@ -795,14 +805,19 @@ main {
     display: block;
     //    margin-top: 30px;
 
-  li {
-    margin-bottom: 11px;
+    li {
+      margin-bottom: 11px;
+    }
   }
+
+    .mobile-vis {
+    display: block;
   }
-  
-  
-   @import 'funnels_mobile';
+
+  .mobile-hid {
+    display: none
+  }
+
+  @import 'funnels_mobile';
 
 }
-
-

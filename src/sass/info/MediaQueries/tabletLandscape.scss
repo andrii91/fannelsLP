@@ -104,17 +104,17 @@
     #nav-icon {
       display: none;
     }
-
+ 
     #menu,
     .menu#menu {
-      display: block;
+      display: block !important;
       text-align: right;
       position: static;
       transform: none;
       background: transparent;
       border-radius: 0;
       transition: 0;
-
+      max-width: 560px;
       li {
         display: inline-block;
         vertical-align: middle;
